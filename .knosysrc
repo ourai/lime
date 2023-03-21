@@ -1,0 +1,8 @@
+{
+  "site": {
+    "default": {
+      "alias": "jekyll-theme-lime",
+      "source": "./"
+    }
+  }
+}
