@@ -1,0 +1,5 @@
+cookbook:
+  name: 食用手册
+  collection: guides
+  toc:
+    - slug: intro

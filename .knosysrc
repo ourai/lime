@@ -2,7 +2,11 @@
   "site": {
     "default": {
       "alias": "jekyll-theme-lime",
-      "source": "./"
+      "source": "./",
+      "git": {
+        "url": "https://github.com/ourai/jekyll-theme-lime.git",
+        "branch": "gh-pages"
+      }
     }
   }
 }
