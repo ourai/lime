@@ -1,0 +1,7 @@
+cookbook:
+  name: 食用手册
+  collection: guides
+  toc:
+    - text: 概述
+      collection: pages
+      slug: guides

@@ -1,23 +1,24 @@
 {
-  "name": "@ourai/jekyll-theme-lime",
+  "name": "@ourai/lime",
   "version": "0.0.0",
-  "description": "A simple, readable Jekyll theme.",
+  "description": "Simple, readable, responsive theme for blogs, personal websites and API docs",
   "private": true,
   "main": "index.js",
   "scripts": {
-    "build": "node . generate",
-    "clean": "rm -rf sites/*/.asset-cache",
-    "start": "node . serve",
+    "build": "node bin generate",
+    "clean": "rm -rf src/jekyll/.asset-cache",
+    "start": "node bin serve",
     "predeploy": "npm run clean",
-    "deploy": "node . deploy"
+    "deploy": "node bin deploy"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ourai/jekyll-theme-lime.git"
+    "url": "git+https://github.com/ourai/lime.git"
   },
   "author": "Ourai Lin <ourairyu@gmail.com> (https://ourai.ws/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ourai/jekyll-theme-lime"
-  }
+    "url": "https://github.com/ourai/lime"
+  },
+  "homepage": "https://ourai.github.io/lime/"
 }

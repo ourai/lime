@@ -1,10 +1,10 @@
 {
   "site": {
     "default": {
-      "alias": "jekyll-theme-lime",
-      "source": "./",
+      "alias": "lime",
+      "source": "./src/jekyll",
       "git": {
-        "url": "https://github.com/ourai/jekyll-theme-lime.git",
+        "url": "https://github.com/ourai/lime.git",
         "branch": "gh-pages"
       }
     }
