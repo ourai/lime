@@ -1,13 +1,15 @@
 @import "./helper";
 
 @import "bootstrap-sprockets";
-@import "./bootstrap-custom";
+@import "bootstrap-custom";
 
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
 @import "./reset";
 
+@import "./components/utilities";
+@import "./components/component";
 @import "./components/widget";
 @import "./components/page";
 @import "./components/article";

@@ -1,4 +1,5 @@
-$headerHeight: 61px;
+$headerHeight: 60px;
+$headerBorderWidth: 1px;
 $footerHeight: 180px;
 
 html,
@@ -7,8 +8,8 @@ body {
 }
 
 .Page-header {
-  margin-bottom: -($headerHeight);
-  border-bottom: 1px solid #dedede;
+  margin-bottom: -($headerHeight + $headerBorderWidth);
+  border-bottom: $headerBorderWidth solid #dedede;
   background-color: #F5F5F5;
 
   .navbar {
@@ -21,8 +22,37 @@ body {
       family: Georgia;
       weight: bold;
     }
-    color: inherit;
     text-shadow: 1px 1px #fff;
+
+    &,
+    a {
+      color: inherit;
+    }
+
+    a {
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+
+      + a {
+        position: relative;
+        margin-left: 1.4em;
+        font: {
+          family: Sans-serif;
+          weight: normal;
+        }
+
+        &:before {
+          content: $UN-space;
+          position: absolute;
+          top: 7px;
+          bottom: 7px;
+          left: -.7em;
+          border-left: 1px solid currentColor;
+        }
+      }
+    }
   }
 
   .navbar-toggle {
@@ -68,7 +98,7 @@ body {
   }
 
   &:before {
-    height: $headerHeight;
+    height: $headerHeight + $headerBorderWidth;
   }
 
   &:after {
