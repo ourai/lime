@@ -129,7 +129,28 @@ feed:
 # Customized configurations
 # =====
 
-# Modules
-module:
-  comment: false
-  share: true
+# KnoSys site config
+ksio:
+  navs:
+    - text: 指南
+      url: /guides/
+    - text: 博客
+      url: /posts/
+    - text: 关于
+      children:
+        - text: 本站
+          url: /about/
+        - text: 作者
+          url: https://linxoid.com/ourai/
+        - text: GitHub
+          url: https://github.com/ourai/lime
+  links:
+    - text: OOSS
+      url: https://oss.ourai.ws/
+    - text: 关于
+      url: /about/
+    - text: 资助
+      url: /about/#donation
+  modules:
+    social:
+      share: true
