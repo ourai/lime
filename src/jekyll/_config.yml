@@ -132,11 +132,12 @@ feed:
 # KnoSys site config
 ksio:
   brand:
+    color: "#0871ab"
     parent:
       text: OOSS
       url: https://oss.ourai.ws/
   navs:
-    - text: 指南
+    - text: 文档
       url: /guides/
     - text: 博客
       url: /posts/

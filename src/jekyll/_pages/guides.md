@@ -63,3 +63,5 @@ permalink: /guides/
 {% highlight html %}
 本站主题 <a href="https://ourai.github.io/lime/" target="_blank" rel="external nofollow">Lime</a> 由 <a href="https://linxoid.com/ourai/" target="_blank" rel="external nofollow">欧雷</a> 提供
 {% endhighlight %}
+
+关于主题的使用方式详见《[快速上手]({{ site.baseurl }}/guides/getting-started/)》。

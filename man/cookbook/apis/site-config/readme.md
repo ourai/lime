@@ -24,7 +24,12 @@ interface Link {
 | 属性名 | 值类型/可选值 | 默认值 | 说明 |
 | --- | --- | --- | --- |
 | `text` | `string` | `site.title` | 当前网站品牌所要显示的文本，不指定则显示网站标题 |
+| `color` | `string` | - | 品牌主题色，详见下方 |
 | `parent` | `Link` | - | 当前网站的父品牌，指定后会在当前网站品牌的左边显示 |
+
+### `color`
+
+设置之后，会在 `<head>` 标签内生成 [`<meta name="theme-color" content="指定主题色">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color){:target="_blank"}{:rel="external nofollow"}。
 
 ## `modules`
 

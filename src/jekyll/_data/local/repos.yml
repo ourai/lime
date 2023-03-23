@@ -5,6 +5,7 @@ cookbook:
     - text: 概述
       collection: pages
       slug: guides
+    - slug: getting-started
     - text: API
       collection: apis
       items:
