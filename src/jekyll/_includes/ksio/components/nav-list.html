@@ -4,10 +4,10 @@
     {% if _inc_nav.children %}
       <li class="dropdown">
         <a class="dropdown-toggle" href="javascript:void(0);" data-toggle="dropdown">{{ _inc_nav.text }} <span class="caret"></span></a>
-        <ul class="dropdown-menu">{% include partials/nav-list.html navs=_inc_nav.children %}</ul>
+        <ul class="dropdown-menu">{% include ksio/components/nav-list.html navs=_inc_nav.children %}</ul>
       </li>
     {% else %}
-      <li>{% include partials/link.html link=_inc_nav utm="utm_source=ourai.github.io/lime&utm_medium=common-header" %}</li>
+      <li>{% include ksio/components/link.html link=_inc_nav utm="utm_source=ourai.github.io/lime&utm_medium=common-header" %}</li>
     {% endif %}
   {% endfor %}
 {% endif %}

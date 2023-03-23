@@ -7,7 +7,7 @@
       {% assign _inc_url_parts = page.id | split: "/" %}
       {% if _inc_item.items %}
         <span>{{ _inc_item.text }}</span>
-        {% include doc-toc.html repo=include.repo items=_inc_item.items collection=_inc_collection %}
+        {% include ksio/components/doc-toc.html repo=include.repo items=_inc_item.items collection=_inc_collection %}
       {% elsif _inc_item.slug %}
         {% if _inc_collection == "pages" %}
           <a{% if _inc_item.slug == _inc_url_parts[1] and _inc_url_parts.size == 2 %} class="is-selected"{% endif %} href="/{{ _inc_item.slug }}/">{{ _inc_item.text }}</a>

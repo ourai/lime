@@ -1,11 +1,11 @@
 ---
 title: 博客
 css:
-  - theme/pages/posts
+  - ksio/pages/posts
 ---
 
 {% contentfor post_banner %}
-  {% assign banner_url = "theme/banners/blog" | asset_path %}
+  {% assign banner_url = "ksio/banners/blog" | asset_path %}
   <div class="Page-banner is-translucent hidden-xs" style="background-image: url('{{ banner_url }}');">
     <figure class="sr-only">
       <img src="{{ banner_url }}" alt="博客文章">
@@ -32,8 +32,8 @@ css:
     </div>
   </aside>
   {% endif %}
-  {% include widgets/social.html %}
-  {% include widgets/toc.html %}
+  {% include ksio/widgets/share.html %}
+  {% include ksio/widgets/toc.html %}
 {% endcontentfor %}
 
 {% assign posts = site.posts %}

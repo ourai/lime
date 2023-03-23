@@ -1,4 +1,4 @@
-#= require jquery.lazyload
+#= require ksio/vendors/jquery.lazyload
 
 $(document).ready ->
   $(".Article-content img").lazyload()

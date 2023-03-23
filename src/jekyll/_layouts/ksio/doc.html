@@ -1,22 +1,22 @@
 ---
-layout: default
+layout: ksio/default
 
 css:
-  - share
+  - ksio/vendors/share
 js:
-  - share.min
-  - components
+  - ksio/vendors/share.min
+  - ksio/components
 ---
 
-{% include header.html %}
+{% include ksio/header.html %}
 <div class="Page-content">
   {% assign repo = site.data.local.repos[page.repo] %}
   {% assign url_parts = page.id | split: "/" %}
 
   {% if repo and repo.toc %}
   <aside class="Page-aside">
-    <div class="AsideBrand">{% include partials/brand-link.html %}</div>
-    <nav class="AsideNav">{% include doc-toc.html repo=page.repo items=repo.toc collection=repo.collection %}</nav>
+    <div class="AsideBrand">{% include ksio/components/brand-link.html %}</div>
+    <nav class="AsideNav">{% include ksio/components/doc-toc.html repo=page.repo items=repo.toc collection=repo.collection %}</nav>
   </aside>
   {% endif %}
   <main class="Page-main">
@@ -26,11 +26,11 @@ js:
       </header>
       <div class="Article-content col-md-9">{{ content }}</div>
       <footer class="Article-footer col-md-3">
-        {% include widgets/social.html %}
-        {% include widgets/toc.html %}
+        {% include ksio/widgets/share.html %}
+        {% include ksio/widgets/toc.html %}
       </footer>
     </article>
-    {% include footer.html %}
+    {% include ksio/footer.html %}
   </main>
 </div>
 

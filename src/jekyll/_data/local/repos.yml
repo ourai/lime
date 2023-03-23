@@ -9,3 +9,4 @@ cookbook:
       collection: apis
       items:
         - site-config
+        - html-reuse

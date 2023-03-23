@@ -1,13 +1,13 @@
 ---
-layout: default
+layout: ksio/default
 css:
-  - share
+  - ksio/vendors/share
 js:
-  - share.min
-  - components
+  - ksio/vendors/share.min
+  - ksio/components
 ---
 
-{% include header.html %}
+{% include ksio/header.html %}
 <main class="Page-content">
   {% assign banner = page.banner %}
   {% if banner %}
@@ -80,7 +80,7 @@ js:
       {% endif %}
       {% if page.comments == true %}
         <!-- 评论区 -->
-        <div class="Article-comments col-md-9">{% include partials/disqus.html %}</div>
+        <div class="Article-comments col-md-9">{% include ksio/widgets/disqus.html %}</div>
       {% endif %}
     </article>
     {% ifhascontent sidebar %}
@@ -88,4 +88,4 @@ js:
     {% endifhascontent %}
   </div>
 </main>
-{% include footer.html %}
+{% include ksio/footer.html %}

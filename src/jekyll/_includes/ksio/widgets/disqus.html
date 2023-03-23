@@ -7,7 +7,7 @@
   {% endif %}
   <div id="disqus_thread"></div>
   {% if comment_config.proxy %}
-    {% javascript disqusjs.min %}
+    {% javascript ksio/vendors/disqusjs.min %}
     <script>
       var dsqjs = new DisqusJS({
           shortname: '{{ disqus_shortname }}',

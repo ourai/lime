@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: ksio/page
 ---
 
 {% assign author = site.data.social.persona[page.author.slug] %}
@@ -33,7 +33,7 @@ layout: page
       </div>
     </div>
   </div>
-  {% include widgets/author.html author=page.author.slug %}
+  {% include ksio/components/author.html author=page.author.slug %}
   {% assign translation_metadata = page.translation %}
   {% assign site_master = site.ourairyu.site.master %}
   {% if translation_metadata %}
@@ -48,7 +48,7 @@ layout: page
       <p>本文采用知识共享<i class="fa fa-creative-commons"></i><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="external nofollow">署名-非商业性使用 4.0 国际</a>许可协议，可自由转载、引用，但需署名作者并注明文章出处且不能用于商业用途。</p>
     </div>
   </div>
-  {% include widgets/social.html %}
+  {% include ksio/widgets/share.html %}
 
   {% assign series = site.data.blog.series[page.series] %}
   {% if series.posts.size > 1 %}
@@ -91,5 +91,5 @@ layout: page
   </aside>
   {% endif %}
 
-  {% include widgets/toc.html %}
+  {% include ksio/widgets/toc.html %}
 {% endcontentfor %}

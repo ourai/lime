@@ -12,15 +12,15 @@
           </button>
         {% endif %}
         {% if site.ksio.brand.parent %}
-          <div class="navbar-brand">{% include partials/brand-link.html %}</div>
+          <div class="navbar-brand">{% include ksio/components/brand-link.html %}</div>
         {% else %}
-          {% include partials/brand-link.html class="navbar-brand" %}
+          {% include ksio/components/brand-link.html class="navbar-brand" %}
         {% endif %}
       </div>
       <!-- Nav menus -->
       <nav class="Page-navs navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
-          {% include partials/nav-list.html navs=site_navs %}
+          {% include ksio/components/nav-list.html navs=site_navs %}
         </ul>
       </nav>
     </div>

@@ -1,12 +1,12 @@
 ---
 title: 概述
-layout: guide
+layout: ksio/doc
 css:
-  - pages/post
-  - pages/doc
+  - ksio/pages/post
+  - ksio/pages/doc
 js:
-  - initializers/time
-  - initializers/lazyload
+  - ksio/initializers/time
+  - ksio/initializers/lazyload
 repo: cookbook
 permalink: /guides/
 ---

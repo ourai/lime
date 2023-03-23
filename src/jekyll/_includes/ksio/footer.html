@@ -7,7 +7,7 @@
         <nav class="Footer-navs">
           <ul>
             {% for link in site.ksio.links %}
-              <li>{% include partials/link.html link=link wrap=true utm=utm_params %}</li>
+              <li>{% include ksio/components/link.html link=link wrap=true utm=utm_params %}</li>
             {% endfor %}
           </ul>
         </nav>

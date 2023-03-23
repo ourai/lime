@@ -15,6 +15,6 @@ title: 关于本站
 若您正在使用或喜欢本主题，请考虑[请我喝杯咖啡]({{ sponsor_url }}#donation){:target="_blank"}{:rel="external nofollow"}以表心意；也许除了本主题之外，还看好[我写的文章](https://ourai.ws/posts/?{{ utm_params }}){:target="_blank"}{:rel="external nofollow"}和[其他作品](https://oss.ourai.ws/?{{ utm_params }}){:target="_blank"}{:rel="external nofollow"}，希望能够保持长期且高质量的产出，也可以考虑[赞助]({{ sponsor_url }}#sponsor){:target="_blank"}{:rel="external nofollow"}我，感激不尽！
 
 {% contentfor footer %}
-  {% include widgets/social.html %}
-  {% include widgets/toc.html %}
+  {% include ksio/widgets/share.html %}
+  {% include ksio/widgets/toc.html %}
 {% endcontentfor %}

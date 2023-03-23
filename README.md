@@ -1,18 +1,18 @@
 # [Lime](https://ourai.github.io/lime/)
 
-A simple, readable, responsive theme for blogs, personal websites and API docs.
+A simple, readable, responsive theme that:
 
-## Supports
+- audience experience first design
+- born for blogs, personal websites and API docs
+- supports most of PC and mobile modern web browsers
+- could be used with SSGs such as [Jekyll](src/jekyll/) (not gem-based), Hexo (coming soon)
 
-Compatibility see below.
+## Getting Started
 
-### SSGs
+Please follow the documentation [on the website](https://ourai.github.io/lime/).
 
-Supported static site generators are:
+## License
 
-- [Jekyll](src/jekyll/) (not gem-based)
-- Hexo (coming soon)
+[MIT](https://opensource.org/licenses/MIT)
 
-### Browsers
-
-Most of PC and mobile modern web browsers.
+Copyright (c) 2015-present, Yao (Ourai) Lin

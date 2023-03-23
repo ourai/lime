@@ -1,5 +1,5 @@
 ---
-layout: compress
+layout: ksio/compress
 ---
 <!DOCTYPE html>
 {% if page.layout_type == null or page.layout_type == blank %}
@@ -8,9 +8,9 @@ layout: compress
   <html lang="zh-CN" dir="ltr" data-layout="{{ page.layout_type }}">
 {% endif %}
   <head>
-    {% include head.html %}
+    {% include ksio/head.html %}
     <!-- 静态资源 -->
-    {% stylesheet disqusjs.min %}
+    {% stylesheet ksio/vendors/disqusjs.min %}
     {% stylesheet global %}
     {% if layout.css %}
       {% for css in layout.css %}{{ css | stylesheet }}{% endfor %}
@@ -23,7 +23,7 @@ layout: compress
     {% endif %}
     {% javascript global %}
     <!--[if lt IE 9]>
-    {% javascript support_ie8 %}
+    {% javascript ksio/support_ie8 %}
     <![endif]-->
   </head>
   {% assign body_class = "Page" %}
@@ -50,11 +50,7 @@ layout: compress
   {% endif %}
   <body class="{{ body_class }}" itemscope itemtype="http://schema.org/WebPage">
     {{ content }}
-    {% if layout.js %}
-      {% for js in layout.js %}{{ js | javascript }}{% endfor %}
-    {% endif %}
-    {% if page.js %}
-      {% for js in page.js %}{{ js | javascript }}{% endfor %}
-    {% endif %}
+    {% if layout.js %}{% for js in layout.js %}{{ js | javascript }}{% endfor %}{% endif %}
+    {% if page.js %}{% for js in page.js %}{{ js | javascript }}{% endfor %}{% endif %}
   </body>
 </html>
