@@ -7,9 +7,9 @@
   "scripts": {
     "build": "node bin generate",
     "clean": "rm -rf src/jekyll/.asset-cache",
-    "start": "node bin serve",
+    "start": "node bin site serve",
     "predeploy": "npm run clean",
-    "deploy": "node bin deploy"
+    "deploy": "node bin site deploy"
   },
   "repository": {
     "type": "git",

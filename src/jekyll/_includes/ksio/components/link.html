@@ -1,10 +1,4 @@
-{% assign _inc_link = include.link %}
-{% if include.wrap == true %}
-  {% capture _inc_text %}<span>{{ _inc_link.text }}</span>{% endcapture %}
-{% else %}
-  {% assign _inc_text = _inc_link.text %}
-{% endif %}
-{% if _inc_link.url contains "http" %}
+{% assign _inc_link = include.link %}{% if _inc_link.url contains "http" %}
   {% assign _inc_link_url = _inc_link.url | append: "?" | append: include.utm %}
   {% assign _inc_external = true %}
 {% else %}
@@ -14,5 +8,4 @@
     {% assign _inc_link_url = "javascript:void(0);" %}
   {% endif %}
   {% assign _inc_external = false %}
-{% endif %}
-<a href="{{ _inc_link_url }}"{% if _inc_external %} target="_blank" rel="external nofollow"{% endif %}>{{ _inc_text }}</a>
+{% endif %}<a href="{{ _inc_link_url }}"{% if _inc_external %} target="_blank" rel="external nofollow"{% endif %}>{% if include.wrap == true %}<span>{{ _inc_link.text }}</span>{% else %}{{ _inc_link.text }}{% endif %}</a>

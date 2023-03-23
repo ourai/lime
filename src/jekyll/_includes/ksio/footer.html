@@ -5,11 +5,7 @@
       {% if site.ksio.links and site.ksio.links.size > 0 %}
         <!-- Important links -->
         <nav class="Footer-navs">
-          <ul>
-            {% for link in site.ksio.links %}
-              <li>{% include ksio/components/link.html link=link wrap=true utm=utm_params %}</li>
-            {% endfor %}
-          </ul>
+          <ul>{% for link in site.ksio.links %}<li>{% include ksio/components/link.html link=link wrap=true utm=utm_params %}</li>{% endfor %}</ul>
         </nav>
       {% endif %}
       <!-- Copyright -->
