@@ -5,3 +5,7 @@ cookbook:
     - text: 概述
       collection: pages
       slug: guides
+    - text: API
+      collection: apis
+      items:
+        - site-config

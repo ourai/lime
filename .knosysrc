@@ -3,6 +3,7 @@
     "default": {
       "alias": "lime",
       "source": "./src/jekyll",
+      "data": "./man",
       "git": {
         "url": "https://github.com/ourai/lime.git",
         "branch": "gh-pages"
