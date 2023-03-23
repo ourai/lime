@@ -15,10 +15,8 @@ js:
 
   {% if repo and repo.toc %}
   <aside class="Page-aside">
-    <div class="AsideBrand"><a href="{{ '/' | prepend: site.baseurl | prepend: site.url }}" title="回到首页">{{ site.title }}</a></div>
-    <nav class="AsideNav">
-      {% include doc-toc.html repo=page.repo items=repo.toc collection=repo.collection %}
-    </nav>
+    <div class="AsideBrand">{% include partials/brand-link.html %}</div>
+    <nav class="AsideNav">{% include doc-toc.html repo=page.repo items=repo.toc collection=repo.collection %}</nav>
   </aside>
   {% endif %}
   <main class="Page-main">

@@ -11,7 +11,11 @@
             <span class="icon-bar"></span>
           </button>
         {% endif %}
-        <a href="{{ '/' | prepend: site.baseurl | prepend: site.url }}" class="navbar-brand">{{ site.title }}</a>
+        {% if site.ksio.brand.parent %}
+          <div class="navbar-brand">{% include partials/brand-link.html %}</div>
+        {% else %}
+          {% include partials/brand-link.html class="navbar-brand" %}
+        {% endif %}
       </div>
       <!-- Nav menus -->
       <nav class="Page-navs navbar-collapse collapse">

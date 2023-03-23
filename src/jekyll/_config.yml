@@ -131,6 +131,10 @@ feed:
 
 # KnoSys site config
 ksio:
+  brand:
+    parent:
+      text: OOSS
+      url: https://oss.ourai.ws/
   navs:
     - text: 指南
       url: /guides/
