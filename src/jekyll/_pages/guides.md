@@ -11,7 +11,7 @@ repo: cookbook
 permalink: /guides/
 ---
 
-本主题由[欧雷](https://linxoid.com/ourai/?utm_source=ourai.github.io/lime){:target="_blank"}{:rel="external nofollow"}于 2015 年开始设计与开发，并在个人网站「[欧雷流](https://ourai.ws/?utm_source=ourai.github.io/lime){:target="_blank"}{:rel="external nofollow"}」及个人各种开源软件的文档站上使用多年；在设计时以提高阅读体验和保持简洁风格为最高原则，体现个性在其次。
+本主题由[欧雷](https://linxoid.com/ourai/?utm_source={{ site.ksio.meta.url }}){:target="_blank"}{:rel="external nofollow"}于 2015 年开始设计与开发，并在个人网站「[欧雷流](https://ourai.ws/?utm_source={{ site.ksio.meta.url }}){:target="_blank"}{:rel="external nofollow"}」及个人各种开源软件的文档站上使用多年；在设计时以提高阅读体验和保持简洁风格为最高原则，体现个性在其次。
 
 因而，适用于博客、个人网站、API 文档站等以内容为主的网站。
 
@@ -61,7 +61,7 @@ permalink: /guides/
 虽说本主题源码开源并免费使用，但还是希望能够在使用时保留主题和作者的名字与来源；如果可以，请在网站底部（即 `footer` 中）加上如下 HTML 代码：
 
 {% highlight html %}
-本站主题 <a href="https://ourai.github.io/lime/" target="_blank" rel="external nofollow">Lime</a> 由 <a href="https://linxoid.com/ourai/" target="_blank" rel="external nofollow">欧雷</a> 提供
+本站主题 <a href="{{ site.ksio.meta.url }}/" target="_blank" rel="external nofollow">Lime</a> 由 <a href="https://linxoid.com/ourai/" target="_blank" rel="external nofollow">欧雷</a> 提供
 {% endhighlight %}
 
 关于主题的使用方式详见《[快速上手]({{ site.baseurl }}/guides/getting-started/)》。

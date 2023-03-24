@@ -3,15 +3,16 @@
     {% assign utm_params = "utm_source=" | append: site.ksio.meta.url | append: "&utm_medium=common-footer" %}
     <div class="Footer-description">
       {% if site.ksio.footer.links and site.ksio.footer.links.size > 0 %}
-        <!-- Important links -->
         <nav class="Footer-navs">
           <ul>{% for link in site.ksio.footer.links %}<li>{% include ksio/components/link.html link=link wrap=true utm=utm_params %}</li>{% endfor %}</ul>
         </nav>
       {% endif %}
-      <!-- Copyright -->
       <div class="Footer-copyright">
         <p>{% include ksio/components/copyright.html utm=utm_params %}</p>
-        {{ site.ksio.copyright.fragments }}
+        <p>由 <a href="https://linxoid.com/ourai/?{{ utm_params }}" target="_blank" rel="external nofollow">欧雷</a> 用 ♥ 设计与开发</p>
+      </div>
+      <div class="Footer-licenses">
+        <p>本站通过 <a href="https://knosysio.github.io/?{{ utm_params }}" target="_blank" rel="external nofollow">KnoSys</a> 借助 <a href="http://jekyllrb.com" target="_blank" rel="external nofollow">Jekyll</a> 生成</p>
       </div>
     </div>
   </div>

@@ -2,7 +2,7 @@
 title: 关于本站
 ---
 
-{% assign utm_params = "utm_source=ourai.github.io/lime&utm_medium=about" %}
+{% assign utm_params = "utm_source=" | append: site.ksio.meta.url | append: "&utm_medium=about" %}
 {% assign sponsor_url = "https://ourai.ws/sponsor/?" | append: utm_params %}
 
 本站既是主题的使用文档，又是在线示例——在浏览学习如何使用本主题的同时，又将其所提供的外观和各种布局几乎都体验了个遍，一举两得！
