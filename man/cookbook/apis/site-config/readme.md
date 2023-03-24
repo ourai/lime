@@ -14,12 +14,21 @@ interface Link {
 
 | 属性名 | 值类型/可选值 | 默认值 | 说明 |
 | --- | --- | --- | --- |
+| `master` | `object` | - | 站长信息，[详见下方](#master) |
 | `meta` | `object` | - | 网站信息，[详见下方](#meta) |
 | `brand` | `object` | - | 品牌相关配置，主要控制页头左上角的链接与文本，[详见下方](#brand) |
 | `copyright` | `object` | - | 网站版权声明，[详见下方](#copyright) |
 | `header` | `object` | - | 页面头部，[详见下方](#header) |
 | `footer` | `object` | - | 页面底部，[详见下方](#footer) |
 | `social` | `object` | - | 社交相关功能的开关与配置，[详见下方](#social) |
+| `seo` | `object` | - | SEO 相关配置，[详见下方](#seo) |
+| `statistic` | `object` | - | 数据统计相关配置，[详见下方](#statistic) |
+
+## `master`
+
+| 属性名 | 值类型/可选值 | 默认值 | 说明 |
+| --- | --- | --- | --- |
+| `name` | `string` | `site.author.name` | 站长名称 |
 
 ## `meta`
 
@@ -101,5 +110,15 @@ interface Link {
 {% endhighlight %}
 
 ### `comment`
+
+待补充。
+
+## `seo`
+
+| 属性名 | 值类型/可选值 | 默认值 | 说明 |
+| --- | --- | --- | --- |
+| `suffix` | `boolean` | `true` | 是否在 `<title>` 中将站名作为后缀拼接 |
+
+## `statistic`
 
 待补充。
