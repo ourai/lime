@@ -10,4 +10,5 @@ cookbook:
       collection: apis
       items:
         - site-config
+        - page-config
         - html-reuse

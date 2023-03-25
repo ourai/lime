@@ -15,10 +15,10 @@
           identifier: '{{ page.url }}',
           url: 'http://' + location.host + '{{ page.url }}',
           title: '{{ page.title }}',
-          api: '{{ comment_config.api.endpoint }}',
-          apikey: '{{ comment_config.api.key }}',
+          api: '{{ comment_config.proxy.endpoint }}',
+          apikey: '{{ comment_config.proxy.key }}',
           admin: '{{ comment_config.username }}',
-          adminLabel: '{{ comment_config.label | default: "鹳狸猿" }}'
+          adminLabel: '{{ comment_config.label | default: "管理员" }}'
       });
     </script>
   {% else %}

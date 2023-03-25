@@ -71,7 +71,7 @@
 
 {% assign role_type = page.ksio_seo_role %}
 {% assign master_name = ksio_master.name | default: site.author.name %}
-{% if role_type == "author" %}
+{% if role_type == "writer" %}
   {% assign posts = site.posts %}
   {% assign first_post_year = posts.last.date | date: "%Y" %}
   {% assign last_post_year = posts.first.date | date: "%Y" %}

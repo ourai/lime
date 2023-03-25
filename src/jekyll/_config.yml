@@ -169,5 +169,3 @@ ksio:
         url: /about/
       - text: 资助
         url: /about/#donation
-  social:
-    share: true

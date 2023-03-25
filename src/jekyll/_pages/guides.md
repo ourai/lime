@@ -58,10 +58,23 @@ permalink: /guides/
 
 ## 使用
 
-虽说本主题源码开源并免费使用，但还是希望能够在使用时保留主题和作者的名字与来源；如果可以，请在网站底部（即 `footer` 中）加上如下 HTML 代码：
+虽说本主题源码开放并免费使用，但还是希望能够在使用时保留主题和提供者的名字与来源——
+
+在使用时，默认会在页面底部（即 `footer` 中）的版权声明右边显示主题和提供者的名字与来源相关信息：
+
+<figure>
+  <img src="{{ 'local/pages/theme-provider' | asset_path }}" alt="主题提供者声明">
+  <figcaption>主题提供者声明</figcaption>
+</figure>
+
+但这并非强制显示，可通过在[网站配置]({{ site.baseurl }}/apis/site-config/)文件中将 [`ksio.copyright.provider`]({{ site.baseurl }}/apis/site-config/#copyright) 设为 `false` 以关闭显示；或把 [`ksio.footer.partial`]({{ site.baseurl }}/apis/site-config/#footer) 改为自定义的页脚去覆盖。
+
+如果可以，请不要关闭默认页脚中主题和提供者的名字与来源的显示；如需完全使用自定义页脚文件，也请在页脚加上如下 HTML 代码：
 
 {% highlight html %}
 本站主题 <a href="{{ site.ksio.meta.url }}/" target="_blank" rel="external nofollow">Lime</a> 由 <a href="https://linxoid.com/ourai/" target="_blank" rel="external nofollow">欧雷</a> 提供
 {% endhighlight %}
+
+感谢理解与配合！🙏
 
 关于主题的使用方式详见《[快速上手]({{ site.baseurl }}/guides/getting-started/)》。
