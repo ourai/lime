@@ -9,4 +9,5 @@ node_modules/
 
 src/jekyll/_data/knosys/
 src/jekyll/_knosys/
+src/jekyll/_assets/*/ksio/
 src/jekyll/_site/

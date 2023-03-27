@@ -5,7 +5,7 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "build": "node bin generate",
+    "build": "node bin build",
     "clean": "rm -rf src/jekyll/.asset-cache",
     "start": "node bin site serve",
     "predeploy": "npm run clean",
@@ -18,7 +18,7 @@
   "author": "Ourai Lin <ourairyu@gmail.com> (https://ourai.ws/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ourai/lime"
+    "url": "https://github.com/ourai/lime/issues"
   },
   "homepage": "https://ourai.github.io/lime/"
 }

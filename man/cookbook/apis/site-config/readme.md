@@ -157,6 +157,6 @@ interface SocialFeed {
 }
 ```
 
-## `statistic`
+## `analytics`
 
 数据统计相关配置，待补充。
