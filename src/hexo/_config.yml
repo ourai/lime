@@ -3,17 +3,18 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
+title: Lime
+subtitle: 一个简朴、易读、响应式的网站主题。
+description: 本主题由欧雷于 2015 年开始设计与开发，并在个人网站「欧雷流」及个人各种开源软件的文档站上使用多年；在设计时以提高阅读体验和保持简洁风格为最高原则，体现个性在其次。适用于博客、个人网站、API 文档站等以内容为主的网站。
 keywords:
 author: John Doe
-language: en
-timezone: ''
+language: zh-CN
+timezone: Asia/Shanghai
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: http://example.com
+root: /lime/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -98,6 +99,45 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: lime
+theme_config:
+  meta:
+    url: https://ourai.github.io/lime
+  brand:
+    color: "#0871ab"
+    parent:
+      text: OOSS
+      url: https://oss.ourai.ws/
+  copyright:
+    owner:
+      text: 欧雷流
+      url: https://ourai.ws/
+    period:
+      start: 2015
+  header:
+    navs:
+      - text: 文档
+        url: /guides/
+      - text: 博客
+        url: /posts/
+      - text: 关于
+        children:
+          - text: 本站
+            url: /about/
+          - text: 作者
+            url: https://linxoid.com/ourai/
+          - text: GitHub
+            url: https://github.com/ourai/lime
+    navbar:
+      placement: right
+  footer:
+    partial: footer.html
+    links:
+      - text: OOSS
+        url: https://oss.ourai.ws/
+      - text: 关于
+        url: /about/
+      - text: 资助
+        url: /about/#donation
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

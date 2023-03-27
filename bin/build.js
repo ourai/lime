@@ -3,7 +3,7 @@ const { resolve: resolvePath } = require('path');
 const { ensureDirExists, copyFileDeeply, readData, saveData, execute } = require('./helper');
 
 const SRC_ROOT = resolvePath(__dirname, '../src');
-const SA_ROOT = `${SRC_ROOT}/standalone`;
+const SA_ROOT = `${SRC_ROOT}/shared`;
 
 function copyAssets(distRoot, polyfill) {
   ['fonts', 'images', 'javascripts', 'stylesheets'].forEach(dirName => {
@@ -29,12 +29,13 @@ function copyAssets(distRoot, polyfill) {
 
   ['_all', '_bootstrap-custom', '_helper', '_painter'].forEach(fileName => {
     const filePath = `${distStyleDirPath}/${fileName}.scss`;
+    const bsStr = fileName === '_all' ? 'bootstrap-sprockets' : 'bootstrap';
 
     saveData(
       filePath,
       readData(filePath)
         .replace(new RegExp('@import "compass', 'g'), '@import "./polyfills/compass')
-        .replace(new RegExp('@import "bootstrap', 'g'), '@import "./polyfills/bootstrap')
+        .replace(new RegExp(`@import "${bsStr}`, 'g'), `@import "./polyfills/${bsStr}`)
         .replace(new RegExp('@import "font-awesome', 'g'), '@import "./polyfills/font-awesome'),
     );
   });

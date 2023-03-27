@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="<%= config.language %>" dir="ltr">
   <head>
-    <%- partial("_partials/head") %>
-    <%- css("stylesheets/global") %>
-    <%- css("stylesheets/pages/home") %>
-    <%- js("javascripts/ksio/vendors/jquery-1.11.3.min") %>
-    <%- js("javascripts/ksio/vendors/bootstrap.min") %>
+    <%- partial('_partials/head') %>
+    <%- css('stylesheets/global') %>
+    <% if (page.__index) { %>
+      <!--%- css('stylesheets/pages/home') %-->
+    <% } %>
+    <%- js('javascripts/ksio/vendors/jquery-1.11.3.min') %>
+    <%- js('javascripts/ksio/vendors/bootstrap.min') %>
   </head>
   <body class="Page" itemscope itemtype="http://schema.org/WebPage"><%- body %></body>
 </html>
