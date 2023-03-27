@@ -1,6 +1,7 @@
 .DS_Store
 sh.exe.stackdump
 
+*.log
 node_modules/
 
 .cache/
@@ -11,3 +12,10 @@ src/jekyll/_data/knosys/
 src/jekyll/_knosys/
 src/jekyll/_assets/*/ksio/
 src/jekyll/_site/
+
+src/hexo/themes/lime/source/*/ksio/
+src/hexo/Thumbs.db
+src/hexo/db.json
+src/hexo/public/
+src/hexo/.deploy*/
+src/hexo/_multiconfig.yml

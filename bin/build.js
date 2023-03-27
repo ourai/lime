@@ -4,24 +4,40 @@ const { ensureDirExists, copyFileDeeply, readData, saveData, execute } = require
 
 const SRC_ROOT = resolvePath(__dirname, '../src');
 const SA_ROOT = `${SRC_ROOT}/standalone`;
-const JEKYLL_ROOT = `${SRC_ROOT}/jekyll`;
 
-function buildJekyllAssets() {
+function copyAssets(distRoot, polyfill) {
   ['fonts', 'images', 'javascripts', 'stylesheets'].forEach(dirName => {
-    const assetsPath = `${JEKYLL_ROOT}/_assets/${dirName}`;
+    const assetsPath = `${distRoot}/${dirName}`;
 
     ensureDirExists(assetsPath);
 
     const srcPath = `${SA_ROOT}/${dirName}`;
-    const distPath = `${JEKYLL_ROOT}/_assets/${dirName}/ksio`;
+    const distPath = `${distRoot}/${dirName}/ksio`;
 
     ensureDirExists(distPath, true);
-    copyFileDeeply(srcPath, distPath);
+    copyFileDeeply(srcPath, distPath, polyfill ? [] : ['polyfills']);
   });
 
-  const shareSnsStyleFilePath = `${JEKYLL_ROOT}/_assets/stylesheets/ksio/vendors/share.scss`;
+  const distStyleDirPath = `${distRoot}/stylesheets/ksio/`;
+  const shareSnsStyleFilePath = `${distStyleDirPath}/vendors/share.scss`;
 
   saveData(shareSnsStyleFilePath, readData(shareSnsStyleFilePath).replace(new RegExp('fonts/vendors/share', 'g'), 'ksio/vendors/share'));
+
+  if (!polyfill) {
+    return;
+  }
+
+  ['_all', '_bootstrap-custom', '_helper', '_painter'].forEach(fileName => {
+    const filePath = `${distStyleDirPath}/${fileName}.scss`;
+
+    saveData(
+      filePath,
+      readData(filePath)
+        .replace(new RegExp('@import "compass', 'g'), '@import "./polyfills/compass')
+        .replace(new RegExp('@import "bootstrap', 'g'), '@import "./polyfills/bootstrap')
+        .replace(new RegExp('@import "font-awesome', 'g'), '@import "./polyfills/font-awesome'),
+    );
+  });
 }
 
 module.exports = {
@@ -31,7 +47,11 @@ module.exports = {
     }
 
     if (type === 'jekyll') {
-      return buildJekyllAssets();
+      return copyAssets(`${SRC_ROOT}/jekyll/_assets`);
+    }
+
+    if (type === 'hexo') {
+      return copyAssets(`${SRC_ROOT}/hexo/themes/lime/source`, true);
     }
   },
 };
