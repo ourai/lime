@@ -5,7 +5,7 @@ A simple, readable, responsive theme that:
 - audience experience first design
 - born for blogs, personal websites and API docs
 - supports most of PC and mobile modern web browsers
-- could be used with SSGs such as [Jekyll](src/jekyll/) (not gem-based), Hexo (coming soon)
+- could be used with SSGs such as [Jekyll](src/jekyll/) (not gem-based), [Hexo](src/hexo/)
 
 ## Getting Started
 
