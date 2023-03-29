@@ -11,15 +11,15 @@
           </button>
         <% } %>
         <% if (theme.brand && theme.brand.parent) { %>
-          <div class="navbar-brand"><%- partial('_components/brand-link', { className: '' }) %></div>
+          <div class="navbar-brand"><%- partial('_ksio/components/brand-link', { className: '' }) %></div>
         <% } else { %>
-          <%- partial('_components/brand-link', { className: 'navbar-brand' }) %>
+          <%- partial('_ksio/components/brand-link', { className: 'navbar-brand' }) %>
         <% } %>
       </div>
       <!-- Nav menus -->
       <nav class="Page-navs navbar-collapse collapse">
         <ul class="nav navbar-nav<% if (theme.header && theme.header.navbar && theme.header.navbar.placement == 'right') { %> navbar-right<% } %>">
-          <%- partial('_components/nav-list', { navs: ((theme.header && theme.header.navs) || []) }) %>
+          <%- partial('_ksio/components/nav-list', { navs: ((theme.header && theme.header.navs) || []) }) %>
         </ul>
       </nav>
     </div>

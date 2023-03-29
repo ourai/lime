@@ -2,9 +2,9 @@
   <% if (_inc_nav.children) { %>
     <li class="dropdown">
       <a class="dropdown-toggle" href="javascript:void(0);" data-toggle="dropdown"><%= _inc_nav.text %> <span class="caret"></span></a>
-      <ul class="dropdown-menu"><%- partial('_components/nav-list', { navs: _inc_nav.children }) %></ul>
+      <ul class="dropdown-menu"><%- partial('_ksio/components/nav-list', { navs: _inc_nav.children }) %></ul>
     </li>
   <% } else { %>
-    <li><%- partial('_components/link', { link: _inc_nav, utm: `utm_source=${theme.meta.url}&utm_medium=common-header`, wrap: false }) %></li>
+    <li><%- partial('_ksio/components/link', { link: _inc_nav, utm: `utm_source=${theme.meta.url}&utm_medium=common-header`, wrap: false }) %></li>
   <% } %>
 <% }) %>
