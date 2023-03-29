@@ -1,0 +1,54 @@
+<%- partial(theme.header && theme.header.partial || '_ksio/partials/header') %>
+<main class="Page-content">
+  <% if (page.banner) { %>
+    <!-- 页面横幅 -->
+    <div class="Page-banner hidden-xs" style="background-image: url('<%= url_for(banner.url) %>');">
+      <figure class="sr-only">
+        <%- image_tag(page.banner.url, { alt: page.banner.description || '' }) %>
+        <figcaption><%= page.banner.description %></figcaption>
+      </figure>
+    </div>
+  <% } %>
+  <!-- 内容主体 -->
+  <div class="container">
+    <article class="Page-main Article">
+      <header class="Article-header">
+        <h1 class="Article-title"><%= page.title %></h1>
+      </header>
+      <div class="Article-content col-md-9"><%- page.content %></div>
+      <% if (page.siblings === true) { %>
+        <!-- 相邻文章 -->
+        <nav class="Article-siblings LightBox col-md-9">
+          <ul>
+            <% ['prev', 'next'].forEach(sibling_key => { %>
+              <% const sibling = page[sibling_key] %>
+              <% let class_name = `Sibling Sibling--${sibling_key}` %>
+
+              <% if (sibling && sibling.url) { %>
+                <% let sibling_image = "none" %>
+
+                <% if (sibling.banner) { %>
+                  <% sibling_image = `url('${url_for(sibling.banner.url)}')` %>
+                <% } else { %>
+                  <% class_name = `${class_name} u-noCover ` %>
+                <% } %>
+
+                <li class="<%= class_name %>">
+                  <a href="<%= sibling.url %>" style="background-image: <%= sibling_image %>;">
+                    <h3><%= sibling.title %></h3>
+                    <p><%- truncate(escape_html(trim(strip_html(markdown(sibling.excerpt)))), 100) %></p>
+                  </a>
+                </li>
+              <% } %>
+            <% }) %>
+          </ul>
+        </nav>
+      <% } %>
+      <% if (page.comments === true) { %>
+        <!-- 评论区 -->
+        <div class="Article-comments col-md-9"><!--% include ksio/widgets/disqus.html %--></div>
+      <% } %>
+    </article>
+  </div>
+</main>
+<%- partial(theme.footer && theme.footer.partial || '_ksio/partials/footer') %>
