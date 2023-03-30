@@ -44,9 +44,9 @@
           </ul>
         </nav>
       <% } %>
-      <% if (page.comments === true) { %>
+      <% if (theme.social && theme.social.comment && page.comments === true) { %>
         <!-- 评论区 -->
-        <div class="Article-comments col-md-9"><!--% include ksio/widgets/disqus.html %--></div>
+        <div class="Article-comments col-md-9"><%- partial('_ksio/widgets/comment') %></div>
       <% } %>
     </article>
   </div>

@@ -1,0 +1,42 @@
+<% const comment_config = theme.social && theme.social.comment && theme.social.comment.disqus %>
+<% const disqus_shortname = comment_config && env.env === 'production' ? comment_config.shortname : '' %>
+<% if (comment_config && disqus_shortname) { %>
+  <% const page_url = page.permalink %>
+  <% const page_id = page_url.replace(config.url, '') %>
+  <div id="disqus_thread"></div>
+  <% if (comment_config.proxy) { %>
+    <%- js('javascripts/ksio/vendors/disqusjs.min') %>
+    <script>
+      var dsqjs = new DisqusJS({
+          shortname: '<%= disqus_shortname %>',
+          siteName: '<%= config.title %>',
+          identifier: '<%= page_id %>',
+          url: '<%= page_url %>',
+          title: '<%= page.title %>',
+          api: '<%= comment_config.proxy.endpoint %>',
+          apikey: '<%= comment_config.proxy.key %>',
+          admin: '<%= comment_config.username %>',
+          adminLabel: '<%= comment_config.label || "管理员" %>'
+      });
+    </script>
+  <% } else { %>
+    <script>
+      var disqus_config = function () {
+        this.page.link = '<%= page_url %>';
+        this.page.identifier = "<%= page_id %>";
+        this.page.title = '<%= page.title %>';
+      };
+
+      (function() {
+        var d = document, s = d.createElement('script');
+
+        s.src = '//<%= disqus_shortname %>.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="external nofollow">comments powered by Disqus.</a></noscript>
+    <script id="dsq-count-scr" src="//<%= disqus_shortname %>.disqus.com/count.js" async></script>
+  <% } %>
+<% } %>

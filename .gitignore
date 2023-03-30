@@ -13,6 +13,9 @@ src/jekyll/_knosys/
 src/jekyll/_assets/*/ksio/
 src/jekyll/_site/
 
+src/hexo/source/_data/knosys/
+src/hexo/source/knosys/
+src/hexo/source/_posts/
 src/hexo/themes/lime/source/*/ksio/
 src/hexo/Thumbs.db
 src/hexo/db.json
