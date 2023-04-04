@@ -1,0 +1,10 @@
+<% if ( page.ksio_slot_header ) { %>
+  <%- partial(page.ksio_slot_header) %>
+<% } else { %>
+  <% if ( page.ksio_slot_title ) { %>
+    <h1 class="Article-title"><%- partial(page.ksio_slot_title) %></h1>
+  <% } else { %>
+    <h1 class="Article-title"><%= page.title %></h1>
+  <% } %>
+  <% if ( page.ksio_slot_meta ) { %><%- partial(page.ksio_slot_meta) %><% } %>
+<% } %>

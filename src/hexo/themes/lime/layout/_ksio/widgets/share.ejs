@@ -1,4 +1,4 @@
-<% if (site.ksio.social.share !== false) { %>
+<% if ((theme.social || {}).share !== false && page.ksio_shareable !== false) { %>
   <div class="Widget Widget--share">
     <div class="Widget-body">
       <p>分享到<i class="fa fa-share-alt"></i></p>
