@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/ourai/lime/issues"
   },
-  "homepage": "https://ourai.github.io/lime/"
+  "homepage": "https://ourai.github.io/lime/",
+  "devDependencies": {
+    "@ntks/toolbox": "0.0.6"
+  }
 }

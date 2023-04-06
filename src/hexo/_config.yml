@@ -138,6 +138,32 @@ theme_config:
       - text: 资助
         url: /about/#donation
 
+ksio:
+  defaults:
+    layout:
+      page:
+        values:
+          ksio_asset_css:
+            - stylesheets/ksio/vendors/share
+          ksio_asset_js:
+            - javascripts/ksio/vendors/share.min
+            - javascripts/ksio/components/page
+            - javascripts/ksio/components/toc
+      post:
+        extends: page
+    page:
+      - scope:
+          type: posts
+        values:
+          ksio_asset_css:
+            - stylesheets/ksio/pages/post
+          ksio_asset_js:
+            - javascripts/ksio/vendors/jquery.timeago
+            - javascripts/ksio/vendors/jquery.timeago.zh-CN
+            - javascripts/ksio/initializers/time
+            - javascripts/ksio/vendors/jquery.lazyload
+            - javascripts/ksio/initializers/lazyload
+
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
