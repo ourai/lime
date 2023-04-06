@@ -1,0 +1,5 @@
+<% if (page.layout && page.layout.split('/')[0] === 'ksio') { %>
+  <%- partial(`_ksio/layouts/${page.layout.split('/').slice(1).join('/')}`) %>
+<% } else { %>
+  <%- partial('_ksio/layouts/page') %>
+<% } %>
