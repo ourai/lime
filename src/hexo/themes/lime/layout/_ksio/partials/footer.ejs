@@ -1,6 +1,6 @@
 <footer class="Page-footer Footer">
-  <div class="<% if (site.data.local && site.data.local.repos && site.data.local.repos[page.repo]) { %>container-fluid<% } else { %>container<% } %>">
-    <% let utm_params = `utm_source=${theme.meta.url}&utm_medium=common-footer` %>
+  <div class="<% if (site.data['local/repos'] && site.data['local/repos'][page.repo]) { %>container-fluid<% } else { %>container<% } %>">
+    <% const utm_params = `utm_source=${theme.meta.url}&utm_medium=common-footer` %>
     <div class="Footer-description">
       <% if (theme.footer && (theme.footer.links || []).length > 0) { %>
         <!-- Important links -->

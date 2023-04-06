@@ -1,6 +1,6 @@
 <header class="Page-header">
   <div class="navbar navbar-static-top">
-    <div class="<% if (site.data.local && site.data.local.repos && site.data.local.repos[page.repo]) { %>container-fluid<% } else { %>container<% } %>">
+    <div class="<% if (site.data['local/repos'] && site.data['local/repos'][page.repo]) { %>container-fluid<% } else { %>container<% } %>">
       <div class="navbar-header">
         <% if (theme.header && (theme.header.navs || []).length > 0) { %>
           <button class="navbar-toggle collapsed" type="button" data-target=".Page-navs" data-toggle="collapse">

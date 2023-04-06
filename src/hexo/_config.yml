@@ -130,6 +130,7 @@ theme_config:
     navbar:
       placement: right
   footer:
+    partial: _local/footer
     links:
       - text: OOSS
         url: https://oss.ourai.ws/
@@ -151,6 +152,14 @@ ksio:
             - javascripts/ksio/components/toc
       post:
         extends: page
+      ksio/doc:
+        values:
+          ksio_asset_css:
+            - stylesheets/ksio/vendors/share
+          ksio_asset_js:
+            - javascripts/ksio/vendors/share.min
+            - javascripts/ksio/components/page
+            - javascripts/ksio/components/toc
     page:
       - scope:
           type: posts
@@ -163,6 +172,20 @@ ksio:
             - javascripts/ksio/initializers/time
             - javascripts/ksio/vendors/jquery.lazyload
             - javascripts/ksio/initializers/lazyload
+      - scope:
+          type: knosys
+        values:
+          layout: ksio/doc
+          ksio_asset_css:
+            - stylesheets/ksio/pages/post
+            - stylesheets/ksio/pages/doc
+          ksio_asset_js:
+            - javascripts/ksio/vendors/jquery.timeago
+            - javascripts/ksio/vendors/jquery.timeago.zh-CN
+            - javascripts/ksio/initializers/time
+            - javascripts/ksio/vendors/jquery.lazyload
+            - javascripts/ksio/initializers/lazyload
+          repo: cookbook
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

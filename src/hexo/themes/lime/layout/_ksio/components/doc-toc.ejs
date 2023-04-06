@@ -1,0 +1,25 @@
+<ul>
+  <% let _inc_site_url = config.root || '/' %>
+  <% if (_inc_site_url.slice(-1) === '/') { %>
+    <% _inc_site_url = _inc_site_url.slice(0, -1) %>
+  <% } %>
+  <% items.forEach(_inc_item => { %>
+    <li>
+      <% const _inc_collection = _inc_item.collection || collection %>
+      <% const _inc_docs = (site.data[`knosys/${repo}/${_inc_collection}`] || {}).items %>
+      <% const _inc_url_parts = page.path.replace('/index.html', '').slice(1).split('/') %>
+      <% if (_inc_item.items) { %>
+        <span><%= _inc_item.text %></span>
+        <%- partial('_ksio/components/doc-toc', { repo, items: _inc_item.items, collection: _inc_collection }) %>
+      <% } else if (_inc_item.slug) { %>
+        <% if (_inc_collection === 'pages') { %>
+          <a<% if (_inc_item.slug === _inc_url_parts[1] && _inc_url_parts.length === 2) { %> class="is-selected"<% } %> href="<%= _inc_site_url %>/<%= _inc_item.slug %>/"><%= _inc_item.text %></a>
+        <% } else { %>
+          <a<% if (_inc_item.slug === _inc_url_parts.slice(-1)[0]) { %> class="is-selected"<% } %> href="<%= _inc_site_url %>/<%= _inc_collection %>/<%= _inc_item.slug %>/"><%= _inc_docs[_inc_item.slug].title %></a>
+        <% } %>
+      <% } else { %>
+        <a<% if (_inc_item === _inc_url_parts.slice(-1)[0]) { %> class="is-selected"<% } %> href="<%= _inc_site_url %>/<%= _inc_collection %>/<%= _inc_item %>/"><%= _inc_docs[_inc_item].title %></a>
+      <% } %>
+    </li>
+  <% }) %>
+</ul>
