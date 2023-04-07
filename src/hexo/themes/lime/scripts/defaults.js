@@ -68,7 +68,7 @@ function resolvePageConfig(page, defaults) {
   return mergeValues(resolveValuesFromLayout(resolved.layout || page.layout, layoutDefaults), resolved);
 }
 
-hexo.extend.filter.register('template_locals', function(locals) {
+hexo.extend.filter.register('template_locals', locals => {
   if (locals.config.ksio && locals.config.ksio.defaults ) {
     locals.page = { ...locals.page, ...resolvePageConfig(locals.page, locals.config.ksio.defaults) };
   }
