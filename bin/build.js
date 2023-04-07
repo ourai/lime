@@ -20,12 +20,17 @@ function copyAssets(distRoot, polyfill) {
 
   const distStyleDirPath = `${distRoot}/stylesheets/ksio/`;
   const shareSnsStyleFilePath = `${distStyleDirPath}/vendors/share.scss`;
-
-  saveData(shareSnsStyleFilePath, readData(shareSnsStyleFilePath).replace(new RegExp('fonts/vendors/share', 'g'), 'ksio/vendors/share'));
+  const shareSnsStyleFileContent = readData(shareSnsStyleFilePath);
 
   if (!polyfill) {
-    return;
+    return saveData(shareSnsStyleFilePath, shareSnsStyleFileContent.replace(new RegExp('fonts/vendors/share', 'g'), 'ksio/vendors/share'));
   }
+
+  saveData(shareSnsStyleFilePath, shareSnsStyleFileContent.replace(new RegExp('fonts/vendors/share', 'g'), '../../../fonts/ksio/vendors/share').replace(new RegExp('font-url', 'g'), 'url'));
+
+  const faStyleFilePath = `${distStyleDirPath}/polyfills/_font-awesome-sprockets.scss`;
+
+  saveData(faStyleFilePath, readData(faStyleFilePath).replace(' font-path($path)', ' "../fonts/ksio/polyfills/#{$path}"'));
 
   ['_all', '_bootstrap-custom', '_helper', '_painter'].forEach(fileName => {
     const filePath = `${distStyleDirPath}/${fileName}.scss`;
