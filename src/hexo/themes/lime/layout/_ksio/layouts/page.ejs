@@ -7,7 +7,7 @@
       <header class="Article-header">
         <%- partial('_ksio/slots/header') %>
       </header>
-      <div class="Article-content col-md-9"><%- page.content %></div>
+      <div class="Article-content col-md-9"><%- partial('_ksio/slots/content') %></div>
       <footer class="Article-footer col-md-3"><%- partial('_ksio/slots/footer') %></footer>
       <% if (page.siblings === true) { %>
         <!-- 相邻文章 -->

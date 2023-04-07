@@ -165,7 +165,7 @@ ksio:
           type: posts
         values:
           ksio_asset_css:
-            - stylesheets/ksio/pages/post
+            - stylesheets/pages/post
           ksio_asset_js:
             - javascripts/ksio/vendors/jquery.timeago
             - javascripts/ksio/vendors/jquery.timeago.zh-CN
@@ -177,8 +177,8 @@ ksio:
         values:
           layout: ksio/doc
           ksio_asset_css:
-            - stylesheets/ksio/pages/post
-            - stylesheets/ksio/pages/doc
+            - stylesheets/pages/post
+            - stylesheets/pages/doc
           ksio_asset_js:
             - javascripts/ksio/vendors/jquery.timeago
             - javascripts/ksio/vendors/jquery.timeago.zh-CN

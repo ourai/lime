@@ -19,6 +19,7 @@ function copyAssets(distRoot, polyfill) {
   });
 
   const distStyleDirPath = `${distRoot}/stylesheets/ksio/`;
+
   const shareSnsStyleFilePath = `${distStyleDirPath}/vendors/share.scss`;
   const shareSnsStyleFileContent = readData(shareSnsStyleFilePath);
 
