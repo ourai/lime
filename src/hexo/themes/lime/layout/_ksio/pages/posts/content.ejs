@@ -1,0 +1,37 @@
+<% const posts = site.posts.data || site.posts %>
+<% if (posts.length > 0) { %>
+  <% const first_post = posts[0] %>
+  <% const author = first_post.author || config.author %>
+  <!-- 最新文章 -->
+  <p>最近的一篇文章发表于 <time datetime="<%= date_xml(first_post.date) %>" class="u-bold"><%= date(first_post.date, 'YYYY 年 M 月 D 日') %></time>——</p>
+  <blockquote>
+    <p><%= truncate(escape_html(trim(strip_html(markdown(first_post.content)))), 100) %></p>
+    <footer><%= author.name || author %></footer>
+  </blockquote>
+  <p>想看完整内容？快戳《<a href="<%= config.root || '/' %><%= first_post.path %>"><%= first_post.title %></a>》！(((o(*ﾟ▽ﾟ*)o)))</p>
+  <% if (site.categories.length > 0) { %>
+    <!-- 主打分类 -->
+    <p>本站主打三类文章，以下为快速通道：</p>
+    <nav class="MainCategories LightBox">
+      <ul></ul>
+    </nav>
+  <% } %>
+  <!-- 文章列表 -->
+  <div class="ArticleList">
+    <% const current_year = date(Date.now(), 'YYYY') %>
+    <% const year_duration = 10 %>
+    <% let prev_post = null %>
+    <% posts.forEach(post => { %>
+      <% const prev_year = prev_post ? date(prev_post.date, 'YYYY') : '' %>
+      <% const year = date(post.date, 'YYYY') %>
+      <% if (current_year - year < year_duration) { %>
+        <% if (prev_post === null || year !== prev_year) { %>
+          <h2 class="ArticleList-heading"><%= year %></h2>
+        <% } %>
+        <div class="ArticleList-item"><time datetime="<%= date_xml(post.date) %>"><%= date(post.date, 'YYYY-MM-DD') %></time><i class="fa fa-pencil"></i><a href="<%= config.root || '/' %><%= post.path %>"><%= post.title %></a></div>
+      <% } %>
+    <% }) %>
+  </div>
+<% } else {%>
+  <p>暂无文章</p>
+<% } %>

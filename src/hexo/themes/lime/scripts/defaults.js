@@ -59,6 +59,12 @@ function resolvePageConfig(page, defaults) {
     }
   });
 
+  ['ksio_asset_css', 'ksio_asset_js'].forEach(k => {
+    if (Array.isArray(page[k]) && page[k].length > 0) {
+      resolved[k] = page[k];
+    }
+  });
+
   return mergeValues(resolveValuesFromLayout(resolved.layout || page.layout, layoutDefaults), resolved);
 }
 

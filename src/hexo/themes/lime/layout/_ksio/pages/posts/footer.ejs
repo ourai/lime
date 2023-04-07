@@ -1,0 +1,11 @@
+<% if (site.posts.length > 0 && site.categories.length > 0) { %>
+  <aside class="Widget Widget--hotCategories">
+    <div class="Widget-body">
+      <p>文章类别<a href="/categories/{{ c }}/">{{ categories[c].name }}</a>下有<span>{{ cat[1].size }}</span>篇文章，其他热门类别有</p>
+      <ul>
+      </ul>
+    </div>
+  </aside>
+<% } %>
+<%- partial('_ksio/widgets/share') %>
+<%- partial('_ksio/widgets/toc') %>
