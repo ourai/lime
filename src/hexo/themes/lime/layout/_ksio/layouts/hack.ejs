@@ -1,6 +1,10 @@
 <% const layoutParts = (page.layout || '').split('/') %>
 <% if (layoutParts.length > 1) { %>
   <%- partial(layoutParts[0] === 'ksio' ? `_ksio/layouts/${layoutParts.slice(1).join('/')}` : layoutParts.join('/')) %>
+<% } else if (is_home()) { %>
+  <%- partial('_ksio/layouts/index') %>
+<% } else if (is_post()) { %>
+  <%- partial('_ksio/layouts/post') %>
 <% } else { %>
   <%- partial('_ksio/layouts/page') %>
 <% } %>
