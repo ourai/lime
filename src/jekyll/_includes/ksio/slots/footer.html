@@ -1,0 +1,9 @@
+{% if page.ksio_slot_footer %}
+  {% include "{{ page.ksio_slot_footer | replace: '.html', '' }}.html" %}
+{% else %}
+  {% ifhascontent footer %}{% contentblock footer %}{% endifhascontent %}
+  {% ifnothascontent footer %}
+    {% include ksio/widgets/share.html %}
+    {% include ksio/widgets/toc.html %}
+  {% endifnothascontent %}
+{% endif %}

@@ -1,0 +1,18 @@
+{% if page.ksio_slot_banner %}
+  {% include "{{ page.ksio_slot_banner | replace: '.html', '' }}.html" %}
+{% else %}
+  {% assign banner = page.banner %}
+  {% if banner %}
+    <!-- 页面横幅 -->
+    <div class="Page-banner hidden-xs" style="background-image: url('{{ banner.url | asset_path }}');">
+      <figure class="sr-only">
+        <img src="{{ banner.url | asset_path }}" alt="{{ banner.description }}">
+        <figcaption>{{ banner.description }}</figcaption>
+      </figure>
+    </div>
+  {% else %}
+    {% ifhascontent post_banner %}
+      {% contentblock post_banner %}
+    {% endifhascontent %}
+  {% endif %}
+{% endif %}

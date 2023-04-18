@@ -1,0 +1,1 @@
+{% if page.ksio_slot_content %}{% include "{{ page.ksio_slot_content | replace: '.html', '' }}.html" %}{% else %}{{ content }}{% endif %}

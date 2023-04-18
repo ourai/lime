@@ -12,12 +12,10 @@ layout: ksio/compress
     <!-- 静态资源 -->
     {% if site.ksio.social.comment.disqus.proxy %}{% stylesheet ksio/vendors/disqusjs.min %}{% endif %}
     {% stylesheet global %}
-    {% if layout.css %}
-      {% for css in layout.css %}{{ css | stylesheet }}{% endfor %}
-    {% endif %}
-    {% if page.css %}
-      {% for css in page.css %}{{ css | stylesheet }}{% endfor %}
-    {% endif %}
+    {% if layout.ksio_asset_css %}{% assign css_from_layout = layout.ksio_asset_css %}{% elsif layout.css %}{% assign css_from_layout = layout.css %}{% endif %}
+    {% if css_from_layout %}{% for css in css_from_layout %}{{ css | stylesheet }}{% endfor %}{% endif %}
+    {% if page.ksio_asset_css %}{% assign css_from_page = page.ksio_asset_css %}{% elsif page.css %}{% assign css_from_page = page.css %}{% endif %}
+    {% if css_from_page %}{% for css in css_from_page %}{{ css | stylesheet }}{% endfor %}{% endif %}
     {% if jekyll.environment == "production" and site.ksio.analytics == true and page.statistic != false %}
       {% javascript statistic %}
     {% endif %}
@@ -41,7 +39,7 @@ layout: ksio/compress
       {% assign body_class = body_class | append: " " | append: page_body_class %}
     {% endif %}
   {% endifnothascontent %}
-  {% if page.banner %}
+  {% if page.ksio_slot_banner or page.banner %}
     {% assign body_class = body_class | append: " " | append: "has-headerImage" %}
   {% else %}
     {% ifhascontent post_banner %}
@@ -50,7 +48,9 @@ layout: ksio/compress
   {% endif %}
   <body class="{{ body_class }}" itemscope itemtype="http://schema.org/WebPage">
     {{ content }}
-    {% if layout.js %}{% for js in layout.js %}{{ js | javascript }}{% endfor %}{% endif %}
-    {% if page.js %}{% for js in page.js %}{{ js | javascript }}{% endfor %}{% endif %}
+    {% if layout.ksio_asset_js %}{% assign js_from_layout = layout.ksio_asset_js %}{% elsif layout.js %}{% assign js_from_layout = layout.js %}{% endif %}
+    {% if js_from_layout %}{% for js in js_from_layout %}{{ js | javascript }}{% endfor %}{% endif %}
+    {% if page.ksio_asset_js %}{% assign js_from_page = page.ksio_asset_js %}{% elsif page.js %}{% assign js_from_page = page.js %}{% endif %}
+    {% if js_from_page %}{% for js in js_from_page %}{{ js | javascript }}{% endfor %}{% endif %}
   </body>
 </html>

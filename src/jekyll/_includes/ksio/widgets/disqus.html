@@ -1,10 +1,10 @@
 {% assign comment_config = site.ksio.social.comment.disqus %}
-{% if comment_config %}
-  {% if jekyll.environment == "production" %}
-    {% assign disqus_shortname = comment_config.shortname %}
-  {% else %}
-    {% assign disqus_shortname = "" %}
-  {% endif %}
+{% if jekyll.environment == "production" %}
+  {% assign disqus_shortname = comment_config.shortname %}
+{% else %}
+  {% assign disqus_shortname = "" %}
+{% endif %}
+{% if comment_config and disqus_shortname and disqus_shortname != "" %}
   <div id="disqus_thread"></div>
   {% if comment_config.proxy %}
     {% javascript ksio/vendors/disqusjs.min %}

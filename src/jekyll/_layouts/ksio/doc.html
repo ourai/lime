@@ -8,7 +8,7 @@ js:
   - ksio/components
 ---
 
-{% include {{ site.ksio.header.partial | default: "ksio/header.html" }} %}
+{% include {{ site.ksio.header.partial | default: "ksio/partials/header.html" }} %}
 <div class="Page-content">
   {% assign repo = site.data.local.repos[page.repo] %}
   {% assign url_parts = page.id | split: "/" %}
@@ -30,7 +30,7 @@ js:
         {% include ksio/widgets/toc.html %}
       </footer>
     </article>
-    {% include {{ site.ksio.footer.partial | default: "ksio/footer.html" }} %}
+    {% include {{ site.ksio.footer.partial | default: "ksio/partials/footer.html" }} %}
   </main>
 </div>
 
