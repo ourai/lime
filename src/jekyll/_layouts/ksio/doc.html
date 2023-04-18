@@ -16,7 +16,7 @@ js:
   {% if repo and repo.toc %}
   <aside class="Page-aside">
     <div class="AsideBrand">{% include ksio/components/brand-link.html %}</div>
-    <nav class="AsideNav">{% include ksio/components/doc-toc.html repo=page.repo items=repo.toc collection=repo.collection %}</nav>
+    <nav class="AsideNav">{% include ksio/components/doc-toc.html repo=page.repo items=repo.toc base=repo.base collection=repo.collection %}</nav>
   </aside>
   {% endif %}
   <main class="Page-main">

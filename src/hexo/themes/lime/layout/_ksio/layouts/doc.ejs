@@ -4,7 +4,7 @@
   <% if (repo && repo.toc) { %>
     <aside class="Page-aside">
       <div class="AsideBrand"><%- partial('_ksio/components/brand-link', { className: '' }) %></div>
-      <nav class="AsideNav"><%- partial('_ksio/components/doc-toc', { repo: page.repo, items: repo.toc, collection: repo.collection }) %></nav>
+      <nav class="AsideNav"><%- partial('_ksio/components/doc-toc', { repo: page.repo, items: repo.toc, base: repo.base, collection: repo.collection }) %></nav>
     </aside>
   <% } %>
   <main class="Page-main">
