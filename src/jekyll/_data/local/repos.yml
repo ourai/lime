@@ -1,5 +1,6 @@
 cookbook:
   name: 食用手册
+  base: /zh
   collection: guides
   toc:
     - text: 概述

@@ -90,7 +90,7 @@ ksio:
       url: https://ourai.ws/
 ```
 
-全部配置项详见《[网站配置]({{ site.baseurl }}/apis/site-config/)》。
+全部配置项详见《[网站配置]({{ site.baseurl }}/zh/apis/site-config/)》。
 
 ### 页面配置
 
@@ -105,4 +105,4 @@ ksio:
     page: # 用于页面，值为数组
 ```
 
-全部配置项详见《[页面配置]({{ site.baseurl }}/apis/page-config/)》。
+全部配置项详见《[页面配置]({{ site.baseurl }}/zh/apis/page-config/)》。

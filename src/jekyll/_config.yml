@@ -140,20 +140,20 @@ ksio:
       url: https://oss.ourai.ws/
   copyright:
     owner:
-      text: 欧雷流
-      url: https://ourai.ws/
+      text: 欧雷
+      url: https://linxoid.com/ourai/
     period:
       start: 2015
   header:
     navs:
       - text: 文档
-        url: /guides/
+        url: /zh/guides/
       - text: 博客
-        url: /posts/
+        url: /zh/posts/
       - text: 关于
         children:
           - text: 本站
-            url: /about/
+            url: /zh/about/
           - text: 作者
             url: https://linxoid.com/ourai/
           - text: GitHub
@@ -164,6 +164,6 @@ ksio:
     partial: footer.html
     links:
       - text: 关于
-        url: /about/
+        url: /zh/about/
       - text: 资助
-        url: /about/#donation
+        url: /zh/about/#donation

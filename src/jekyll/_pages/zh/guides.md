@@ -8,7 +8,6 @@ js:
   - ksio/initializers/time
   - ksio/initializers/lazyload
 repo: cookbook
-permalink: /guides/
 ---
 
 本主题由[欧雷](https://linxoid.com/ourai/?utm_source={{ site.ksio.meta.url }}){:target="_blank"}{:rel="external nofollow"}于 2015 年开始设计与开发，并在个人网站「[欧雷流](https://ourai.ws/?utm_source={{ site.ksio.meta.url }}){:target="_blank"}{:rel="external nofollow"}」及个人各种开源软件的文档站上使用多年；在设计时以提高阅读体验和保持简洁风格为最高原则，体现个性在其次。
@@ -59,7 +58,7 @@ permalink: /guides/
 
 ## 使用
 
-本主题支持多种使用方式，详见《[快速上手]({{ site.baseurl }}/guides/getting-started/)》。
+本主题支持多种使用方式，详见《[快速上手]({{ site.baseurl }}/zh/guides/getting-started/)》。
 
 ### 主题署名
 
@@ -72,7 +71,7 @@ permalink: /guides/
   <figcaption>主题提供者声明</figcaption>
 </figure>
 
-但这并非是强制的，可通过在[网站配置]({{ site.baseurl }}/apis/site-config/)文件中将 [`copyright.provider`]({{ site.baseurl }}/apis/site-config/#copyright) 设为 `false` 以关闭显示；或把 [`footer.partial`]({{ site.baseurl }}/apis/site-config/#footer) 改为自定义的页脚去覆盖。
+但这并非是强制的，可通过在[网站配置]({{ site.baseurl }}/zh/apis/site-config/)文件中将 [`copyright.provider`]({{ site.baseurl }}/zh/apis/site-config/#copyright) 设为 `false` 以关闭显示；或把 [`footer.partial`]({{ site.baseurl }}/zh/apis/site-config/#footer) 改为自定义的页脚去覆盖。
 
 如果可以，请不要关闭默认页脚中主题和提供者的名字与来源的显示；如需完全使用自定义页脚文件，也请在页脚加上如下 HTML 代码：
 

@@ -1,35 +1,6 @@
 ---
 layout: ksio/default
-css:
-  - local/pages/index
 permalink: index.html
 ---
 
-{% include ksio/partials/header.html %}
-<main class="Page-content">
-  <article class="Homepage">
-    <header class="Homepage-header">
-      <h1>{{ site.title }}</h1>
-      <p class="Homepage-slogan">{{ site.tagline | default: site.description }}</p>
-      <p class="GetStarted"><a href="{{ '/guides/' | prepend: site.baseurl | prepend: site.url }}">开始了解<i class="fa fa-long-arrow-right"></i></a></p>
-    </header>
-    <section class="Homepage-body">
-      <h2 class="sr-only">特色</h2>
-      <div class="FeatureList">
-        <div class="FeatureList-item">
-          <h3>体验优先</h3>
-          <p>以提高阅读体验和保持简洁风格为最高原则，体现个性在其次。</p>
-        </div>
-        <div class="FeatureList-item">
-          <h3>应用广泛</h3>
-          <p>可用于博客、个人网站、API 文档站等以内容为主的网站。</p>
-        </div>
-        <div class="FeatureList-item">
-          <h3>多种支持</h3>
-          <p>除了提供核心的样式与交互外，还支持 Jekyll、Hexo 等主流静态网站生成器。</p>
-        </div>
-      </div>
-    </section>
-  </article>
-</main>
-{% include footer.html %}
+<p style="display: flex; align-items: center; height: 100%; justify-content: center; font-size: 3rem;"><span>Sorry, only <a href="{{ '' | prepend: site.baseurl | prepend: site.url }}/zh/" style="font-weight: 400; font-style: italic;">Chinese</a> is supported for now.</span></p>
