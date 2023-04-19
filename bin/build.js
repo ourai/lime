@@ -48,7 +48,7 @@ function copyHexoFiles() {
   const hexoDistRoot = `${distRoot}/hexo`;
 
   ensureDirExists(hexoDistRoot, true);
-  copyFileDeeply(hexoSrcRoot, hexoDistRoot);
+  copyFileDeeply(hexoSrcRoot, hexoDistRoot, ['source']);
   rm(`${hexoDistRoot}/*/_local`);
 
   copyThemeAssets(`${hexoDistRoot}/source`, true);

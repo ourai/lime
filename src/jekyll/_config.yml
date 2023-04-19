@@ -163,8 +163,6 @@ ksio:
   footer:
     partial: footer.html
     links:
-      - text: OOSS
-        url: https://oss.ourai.ws/
       - text: 关于
         url: /about/
       - text: 资助

@@ -26,7 +26,7 @@ permalink: /guides/
 ### 静态网站生成器
 
 - Jekyll（非 gem-based）
-- Hexo（计划中）
+- Hexo
 
 ## 依赖
 
@@ -38,6 +38,7 @@ permalink: /guides/
   - [Markdown](https://www.markdownguide.org/){:target="_blank"}{:rel="external nofollow"}（[kramdown](https://kramdown.gettalong.org/){:target="_blank"}{:rel="external nofollow"}）
   - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML){:target="_blank"}{:rel="external nofollow"}
   - [Liquid](https://shopify.dev/docs/api/liquid){:target="_blank"}{:rel="external nofollow"}
+  - [EJS](https://ejs.co/){:target="_blank"}{:rel="external nofollow"}
 - 界面样式
   - [Sass](https://sass-lang.com/){:target="_blank"}{:rel="external nofollow"}（SCSS）
   - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS){:target="_blank"}{:rel="external nofollow"}
@@ -58,6 +59,10 @@ permalink: /guides/
 
 ## 使用
 
+本主题支持多种使用方式，详见《[快速上手]({{ site.baseurl }}/guides/getting-started/)》。
+
+### 主题署名
+
 虽说本主题源码开放并免费使用，但还是希望能够在使用时保留主题和提供者的名字与来源——
 
 在使用时，默认会在页面底部（即 `footer` 中）的版权声明右边显示主题和提供者的名字与来源相关信息：
@@ -67,7 +72,7 @@ permalink: /guides/
   <figcaption>主题提供者声明</figcaption>
 </figure>
 
-但这并非强制显示，可通过在[网站配置]({{ site.baseurl }}/apis/site-config/)文件中将 [`ksio.copyright.provider`]({{ site.baseurl }}/apis/site-config/#copyright) 设为 `false` 以关闭显示；或把 [`ksio.footer.partial`]({{ site.baseurl }}/apis/site-config/#footer) 改为自定义的页脚去覆盖。
+但这并非是强制的，可通过在[网站配置]({{ site.baseurl }}/apis/site-config/)文件中将 [`copyright.provider`]({{ site.baseurl }}/apis/site-config/#copyright) 设为 `false` 以关闭显示；或把 [`footer.partial`]({{ site.baseurl }}/apis/site-config/#footer) 改为自定义的页脚去覆盖。
 
 如果可以，请不要关闭默认页脚中主题和提供者的名字与来源的显示；如需完全使用自定义页脚文件，也请在页脚加上如下 HTML 代码：
 
@@ -76,5 +81,3 @@ permalink: /guides/
 {% endhighlight %}
 
 感谢理解与配合！🙏
-
-关于主题的使用方式详见《[快速上手]({{ site.baseurl }}/guides/getting-started/)》。
