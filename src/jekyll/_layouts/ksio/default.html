@@ -8,7 +8,7 @@ layout: ksio/compress
   <html lang="zh-CN" dir="ltr" data-layout="{{ page.layout_type }}">
 {% endif %}
   <head>
-    {% include ksio/head.html %}
+    {% include ksio/partials/head.html %}
     <!-- 静态资源 -->
     {% if site.ksio.social.comment.disqus.proxy %}{% stylesheet ksio/vendors/disqusjs.min %}{% endif %}
     {% stylesheet global %}

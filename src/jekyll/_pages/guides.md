@@ -2,8 +2,8 @@
 title: 概述
 layout: ksio/doc
 css:
-  - ksio/pages/post
-  - ksio/pages/doc
+  - local/pages/post
+  - local/pages/doc
 js:
   - ksio/initializers/time
   - ksio/initializers/lazyload

@@ -67,7 +67,7 @@ interface CopyrightPeriod {
 | 属性名 | 值类型/可选值 | 默认值 | 说明 |
 | --- | --- | --- | --- |
 | `links` | `Link[]` | - | 页面底部链接 |
-| `partial` | `string` | `'ksio/footer.html'` | 预置布局模板中页脚部分，可指定自定义的替换主题预置的 |
+| `partial` | `string` | `'ksio/partials/footer.html'` | 预置布局模板中页脚部分，可指定自定义的替换主题预置的 |
 
 ## `header`
 
@@ -77,7 +77,7 @@ interface CopyrightPeriod {
 | --- | --- | --- | --- |
 | `navbar` | `HeaderNavBar` | - | 页头导航栏，[详见下方](#navbar) |
 | `navs` | `Link[]` | - | 页面头部导航 |
-| `partial` | `string` | `'ksio/header.html'` | 预置布局模板中页头部分，可指定自定义的替换主题预置的 |
+| `partial` | `string` | `'ksio/partials/header.html'` | 预置布局模板中页头部分，可指定自定义的替换主题预置的 |
 
 ### `navbar`
 

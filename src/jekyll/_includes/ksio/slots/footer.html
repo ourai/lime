@@ -1,5 +1,5 @@
 {% if page.ksio_slot_footer %}
-  {% include "{{ page.ksio_slot_footer | replace: '.html', '' }}.html" %}
+  {% include {{ page.ksio_slot_footer | replace: ".html", "" | append: ".html" }} %}
 {% else %}
   {% ifhascontent footer %}{% contentblock footer %}{% endifhascontent %}
   {% ifnothascontent footer %}

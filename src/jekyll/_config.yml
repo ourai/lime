@@ -71,8 +71,8 @@ defaults:
     values:
       layout: ksio/doc
       css:
-        - ksio/pages/post
-        - ksio/pages/doc
+        - local/pages/post
+        - local/pages/doc
       js:
         - ksio/initializers/time
         - ksio/initializers/lazyload
@@ -90,7 +90,7 @@ defaults:
     values:
       layout: ksio/post
       css:
-        - ksio/pages/post
+        - local/pages/post
       js:
         - ksio/initializers/time
         - ksio/initializers/lazyload

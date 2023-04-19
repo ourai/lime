@@ -1,0 +1,19 @@
+{% if site.posts.size > 0 %}
+<aside class="Widget Widget--hotCategories">
+  <div class="Widget-body">
+    {% assign categories = site.data.taxonomy.categories %}
+    {% assign cats = site.categories %}
+    {% assign cat = cats.first %}
+    {% assign c = cat[0] %}
+    <p>文章类别<a href="/categories/{{ c }}/">{{ categories[c].name }}</a>下有<span>{{ cat[1].size }}</span>篇文章，其他热门类别有</p>
+    <ul>
+      {% for cat in cats limit: 5 offset: 1 %}
+        {% assign c = cat[0] %}
+        <li><a href="/categories/{{ c }}/">{{ categories[c].name }} ({{ cat[1].size }})</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</aside>
+{% endif %}
+{% include ksio/widgets/share.html %}
+{% include ksio/widgets/toc.html %}
