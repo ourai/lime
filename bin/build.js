@@ -1,50 +1,68 @@
 const { resolve: resolvePath } = require('path');
+const { pick } = require('@ntks/toolbox');
 
-const { ensureDirExists, copyFileDeeply, readData, saveData, execute } = require('./helper');
+const { ensureDirExists, copyFileDeeply, rm, cp, saveData, execute, copyThemeAssets } = require('./helper');
 
-const SRC_ROOT = resolvePath(__dirname, '../src');
-const SA_ROOT = `${SRC_ROOT}/shared`;
+const prjRoot = resolvePath(__dirname, '..');
+const srcRoot = `${prjRoot}/src`;
+const distRoot = `${prjRoot}/dist`;
 
-function copyAssets(distRoot, polyfill) {
-  ['fonts', 'images', 'javascripts', 'stylesheets'].forEach(dirName => {
-    const assetsPath = `${distRoot}/${dirName}`;
+function copyMetaFiles(dirName) {
+  const distDir = `${distRoot}/${dirName}`;
+  const readmeTemplate = `# [Lime](https://ourai.github.io/lime/)
 
-    ensureDirExists(assetsPath);
+A simple, readable, responsive theme that:
 
-    const srcPath = `${SA_ROOT}/${dirName}`;
-    const distPath = `${distRoot}/${dirName}/ksio`;
+- audience experience first design
+- born for blogs, personal websites and API docs
+- supports most of PC and mobile modern web browsers
+
+## Getting Started
+
+Please follow the documentation [on the website](https://ourai.github.io/lime/).
+`;
+
+  saveData(`${distDir}/README.md`, readmeTemplate);
+  cp(`${prjRoot}/CHANGELOG.md`, `${distDir}/`);
+}
+
+function copyJekyllFiles() {
+  const jekyllSrcRoot = `${srcRoot}/jekyll`;
+  const jekyllDistRoot = `${distRoot}/jekyll`;
+
+  ensureDirExists(jekyllDistRoot, true);
+
+  ['_includes', '_layouts'].forEach(dirName => {
+    const distPath = `${jekyllDistRoot}/${dirName}/ksio`;
 
     ensureDirExists(distPath, true);
-    copyFileDeeply(srcPath, distPath, polyfill ? [] : ['polyfills']);
+    copyFileDeeply(`${jekyllSrcRoot}/${dirName}/ksio`, distPath);
   });
 
-  const distStyleDirPath = `${distRoot}/stylesheets/ksio/`;
+  copyThemeAssets(`${jekyllDistRoot}/_assets`);
+  copyMetaFiles('jekyll');
+}
 
-  const shareSnsStyleFilePath = `${distStyleDirPath}/vendors/share.scss`;
-  const shareSnsStyleFileContent = readData(shareSnsStyleFilePath);
+function copyHexoFiles() {
+  const hexoSrcRoot = `${srcRoot}/hexo/themes/lime`;
+  const hexoDistRoot = `${distRoot}/hexo`;
 
-  if (!polyfill) {
-    return saveData(shareSnsStyleFilePath, shareSnsStyleFileContent.replace(new RegExp('fonts/vendors/share', 'g'), 'ksio/vendors/share'));
-  }
+  ensureDirExists(hexoDistRoot, true);
+  copyFileDeeply(hexoSrcRoot, hexoDistRoot);
+  rm(`${hexoDistRoot}/*/_local`);
 
-  saveData(shareSnsStyleFilePath, shareSnsStyleFileContent.replace(new RegExp('fonts/vendors/share', 'g'), '../../../fonts/ksio/vendors/share').replace(new RegExp('font-url', 'g'), 'url'));
+  copyThemeAssets(`${hexoDistRoot}/source`, true);
 
-  const faStyleFilePath = `${distStyleDirPath}/polyfills/_font-awesome-sprockets.scss`;
+  const { devDependencies, ...pkgFields } = pick(require(`${prjRoot}/package.json`), ['version', 'description', 'repository', 'author', 'license', 'bugs', 'homepage', 'devDependencies']);
 
-  saveData(faStyleFilePath, readData(faStyleFilePath).replace(' font-path($path)', ' "../fonts/ksio/polyfills/#{$path}"'));
-
-  ['_all', '_bootstrap-custom', '_helper', '_painter'].forEach(fileName => {
-    const filePath = `${distStyleDirPath}/${fileName}.scss`;
-    const bsStr = fileName === '_all' ? 'bootstrap-sprockets' : 'bootstrap';
-
-    saveData(
-      filePath,
-      readData(filePath)
-        .replace(new RegExp('@import "compass', 'g'), '@import "./polyfills/compass')
-        .replace(new RegExp(`@import "${bsStr}`, 'g'), `@import "./polyfills/${bsStr}`)
-        .replace(new RegExp('@import "font-awesome', 'g'), '@import "./polyfills/font-awesome'),
-    );
-  });
+  saveData(`${hexoDistRoot}/package.json`, JSON.stringify({
+    name: 'hexo-theme-lime',
+    main: 'package.json',
+    keywords: ['hexo', 'theme', 'lime', 'knosys', 'ksio'],
+    ...pkgFields,
+    dependencies: { '@ntks/toolbox': devDependencies['@ntks/toolbox'] },
+  }, null, 2));
+  copyMetaFiles('hexo');
 }
 
 module.exports = {
@@ -54,11 +72,11 @@ module.exports = {
     }
 
     if (type === 'jekyll') {
-      return copyAssets(`${SRC_ROOT}/jekyll/_assets`);
+      return copyJekyllFiles();
     }
 
     if (type === 'hexo') {
-      return copyAssets(`${SRC_ROOT}/hexo/themes/lime/source`, true);
+      return copyHexoFiles();
     }
   },
 };

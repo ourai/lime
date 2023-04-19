@@ -3,6 +3,7 @@ sh.exe.stackdump
 
 *.log
 node_modules/
+dist/
 
 .cache/
 .asset-cache/

@@ -1,15 +1,16 @@
 {
   "name": "@ourai/lime",
-  "version": "0.0.0",
+  "version": "0.0.0-alpha.1",
   "description": "Simple, readable, responsive theme for blogs, personal websites and API docs",
   "private": true,
   "main": "index.js",
   "scripts": {
+    "copy": "node bin copy",
     "build": "node bin build",
     "clean": "rm -rf src/jekyll/.asset-cache",
     "start": "node bin serve",
     "predeploy": "npm run clean",
-    "deploy": "node bin site deploy"
+    "deploy": "node bin deploy"
   },
   "repository": {
     "type": "git",
