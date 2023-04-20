@@ -90,11 +90,11 @@ ksio:
       url: https://ourai.ws/
 ```
 
-全部配置项详见《[网站配置]({{ site.baseurl }}/zh/apis/site-config/)》。
+全部配置项详见《[网站配置#模板]({{ site.baseurl }}/zh/apis/site-config/#template)》。
 
 ### 页面配置
 
-「页面配置」即定义在 Front Matter 中的变量。
+即定义在 Front Matter 中的变量，可用配置项详见《[页面配置]({{ site.baseurl }}/zh/apis/page-config/)》。
 
 在 Jekyll 中可按匹配规则为页面配置[批量设置默认值](https://jekyllrb.com/docs/configuration/front-matter-defaults/){:target="_blank"}{:rel="external nofollow"}，虽 Hexo 本身不具备此机制，但本主题在一定程度上进行了模拟，需在[网站配置文件](https://hexo.io/zh-cn/docs/configuration){:target="_blank"}{:rel="external nofollow"}中添加：
 
@@ -105,4 +105,4 @@ ksio:
     page: # 用于页面，值为数组
 ```
 
-全部配置项详见《[页面配置]({{ site.baseurl }}/zh/apis/page-config/)》。
+具体用法详见《[网站配置#defaults]({{ site.baseurl }}/zh/apis/site-config/#defaults)》。
