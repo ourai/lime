@@ -1,3 +1,25 @@
+下述内容将会告知让本主题在你的网站项目中顺利运行并看到效果的基本条件。
+
+## 目录结构
+
+为保持在不同静态网站生成器中使用体验一致性，主题预置的静态资源存放在：
+
+```text
+[ASSET_ROOT]
+   ├── fonts
+   │   └── ...
+   ├── images
+   │   └── ...
+   ├── javascripts
+   │   └── ...
+   └── stylesheets
+       └── ...
+```
+
+`[ASSET_ROOT]` 在 Jekyll 和 Hexo 中分别是 `_assets` 与 `themes/lime/source`。即便如此，在实际使用时自定义文件的目录结构可以不按照这个来。
+
+另外，无论是静态资源还是动态模板，主题所提供的和强依赖的基本都放在 `ksio` 或 `_ksio` 文件夹下。
+
 ## 下载安装
 
 为满足多种使用场景，本主题提供了相应的方式——
@@ -17,35 +39,11 @@ Jekyll 的主题暂不支持通过 [Gem](https://rubygems.org/){:target="_blank"
 
 解压后将文件夹与文件复制或挪动到自己项目的指定位置。
 
-## 运行网站
-
-在将主题文件都弄到自己项目中后，为了让网站能够成功运行并看到效果，需了解以下事宜——
-
-### 目录结构
-
-为保持在不同静态网站生成器中使用体验一致性，主题预置的静态资源存放在：
-
-```text
-[ASSET_ROOT]
-   ├── fonts
-   │   └── ...
-   ├── images
-   │   └── ...
-   ├── javascripts
-   │   └── ...
-   └── stylesheets
-       └── ...
-```
-
-`[ASSET_ROOT]` 在 Jekyll 和 Hexo 中分别是 `_assets` 与 `themes/lime/source`。即便如此，在实际使用时自定义文件的目录结构可以不按照这个来。
-
-无论是静态资源还是动态模板，主题所提供的和强依赖的基本都放在 `ksio` 或 `_ksio` 文件夹下。
-
-### 创建文件
+## 创建文件
 
 有几个静态资源文件是要手动创建的——
 
-#### 全局依赖
+### 全局依赖
 
 创建 `[ASSET_ROOT]/stylesheets/_helper.scss`，内容为：
 
@@ -66,7 +64,7 @@ Jekyll 的主题暂不支持通过 [Gem](https://rubygems.org/){:target="_blank"
 //= require ./ksio/bootstrap-sprockets.js
 ```
 
-#### 页面依赖
+### 页面依赖
 
 当要使用主题预置页面的样式时，需要为每个页面创建单独的样式文件并通过 `@import` 去导入：
 
@@ -75,6 +73,8 @@ Jekyll 的主题暂不支持通过 [Gem](https://rubygems.org/){:target="_blank"
 | 文章列表 | `ksio/page` 或 `page` | `[ASSET_ROOT]/stylesheets/ksio/pages/_posts.scss` |
 | 文章详情 | `ksio/post` 或 `post` | `[ASSET_ROOT]/stylesheets/ksio/pages/_post.scss` |
 | 文档详情 | `ksio/doc` | `[ASSET_ROOT]/stylesheets/ksio/pages/_doc.scss` |
+
+## 全局配置
 
 ### 主题配置
 
@@ -106,3 +106,11 @@ ksio:
 ```
 
 具体用法详见《[网站配置#defaults]({{ site.baseurl }}/zh/apis/site-config/#defaults)》。
+
+## 定制扩展
+
+为尽量满足使用者的定制化需求，主题提供了强大的扩展能力与很多可复用资源，如：主题配置、布局插槽、模板片段、Sass mixin 等。
+
+为避免后续升级主题时所产生的不必要的问题，及让主题能够良性且可持续地发展，在满足自身需求时**不推荐去修改主题预置的动态模板与静态资源**，即存放在 `ksio` 或 `_ksio` 文件夹下的文件。
+
+若你认为本主题在哪方面应该加强，欢迎到 [GitHub Issues](https://github.com/ourai/lime/issues/new/choose){:target="_blank"}{:rel="external nofollow"} 详细地提出你的建议；若有可能，再提交 [PR](https://github.com/ourai/lime/pulls){:target="_blank"}{:rel="external nofollow"} 实现它。
