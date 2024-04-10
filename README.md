@@ -13,6 +13,6 @@ Please follow the documentation [on the website](https://ourai.github.io/lime/).
 
 ## License
 
-[MIT](https://opensource.org/licenses/MIT)
+Source code is released under the [MIT](./LICENSE) license, and documents are shared under the [CC BY-NC-SA 4.0](./LICENSE-docs) license.
 
 Copyright (c) 2015-present, Ourai Lin
