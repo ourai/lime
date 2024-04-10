@@ -15,4 +15,4 @@ Please follow the documentation [on the website](https://ourai.github.io/lime/).
 
 [MIT](https://opensource.org/licenses/MIT)
 
-Copyright (c) 2015-present, Yao (Ourai) Lin
+Copyright (c) 2015-present, Ourai Lin
