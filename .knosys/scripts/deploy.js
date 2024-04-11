@@ -3,7 +3,7 @@ const { execSync } = require('child_process');
 
 const { rm, execute } = require('./helper');
 
-const prjRoot = resolvePath(__dirname, '..');
+const prjRoot = resolvePath(__dirname, '../..');
 const distRoot = `${prjRoot}/dist`;
 
 function zipTheme(dirName) {

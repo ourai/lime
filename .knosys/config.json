@@ -1,5 +1,5 @@
 {
-  "command": "./bin",
+  "command": "./.knosys/scripts",
   "site": {
     "default": {
       "alias": "lime",

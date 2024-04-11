@@ -1,9 +1,6 @@
-const { resolve: resolvePath } = require('path');
-const { readFileSync } = require('fs');
+const knosysUtils = require('./knosys');
 
-const rootPath = resolvePath(__dirname, '..');
-const knosysUtils = require(resolvePath(rootPath, JSON.parse(readFileSync(resolvePath(rootPath, '.knosysrc'), 'utf8').toString().trim()).$path));
-const { ensureDirExists, copyFileDeeply, readData, saveData } = knosysUtils;
+const { resolveRootPath, ensureDirExists, copyFileDeeply, readData, saveData } = knosysUtils;
 
 function copyThemeAssets(distRoot, polyfill) {
   ['fonts', 'images', 'javascripts', 'stylesheets'].forEach(dirName => {
@@ -11,7 +8,7 @@ function copyThemeAssets(distRoot, polyfill) {
 
     ensureDirExists(assetsPath);
 
-    const srcPath = `${rootPath}/src/shared/${dirName}`;
+    const srcPath = `${resolveRootPath()}/src/shared/${dirName}`;
     const distPath = `${distRoot}/${dirName}/ksio`;
 
     ensureDirExists(distPath, true);

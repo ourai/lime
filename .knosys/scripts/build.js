@@ -1,9 +1,8 @@
-const { resolve: resolvePath } = require('path');
 const { pick } = require('@ntks/toolbox');
 
-const { ensureDirExists, copyFileDeeply, rm, cp, saveData, execute, copyThemeAssets } = require('./helper');
+const { resolveRootPath, ensureDirExists, copyFileDeeply, rm, cp, saveData, execute, copyThemeAssets } = require('./helper');
 
-const prjRoot = resolvePath(__dirname, '..');
+const prjRoot = resolveRootPath();
 const srcRoot = `${prjRoot}/src`;
 const distRoot = `${prjRoot}/dist`;
 

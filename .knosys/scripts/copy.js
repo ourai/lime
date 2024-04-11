@@ -4,7 +4,7 @@ const { copyThemeAssets } = require('./helper');
 
 module.exports = {
   execute: (type = 'jekyll') => {
-    const srcRoot = resolvePath(__dirname, '../src');
+    const srcRoot = resolvePath(__dirname, '../../src');
 
     if (type === 'jekyll') {
       return copyThemeAssets(`${srcRoot}/jekyll/_assets`);

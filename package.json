@@ -5,12 +5,12 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "copy": "node bin copy",
-    "build": "node bin build",
+    "copy": "node .knosys/scripts copy",
+    "build": "node .knosys/scripts build",
     "clean": "rm -rf src/jekyll/.asset-cache",
-    "start": "node bin serve",
+    "start": "node .knosys/scripts serve",
     "predeploy": "npm run clean",
-    "deploy": "node bin deploy"
+    "deploy": "node .knosys/scripts deploy"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   },
   "homepage": "https://ourai.github.io/lime/",
   "devDependencies": {
-    "@ntks/toolbox": "0.0.6"
+    "@ntks/toolbox": "0.0.6",
+    "ksio": "0.0.2"
   }
 }
