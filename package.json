@@ -1,17 +1,9 @@
 {
   "name": "@ourai/lime",
-  "version": "0.0.0-alpha.1",
+  "version": "0.0.0-alpha.2",
   "description": "Simple, readable, responsive theme for blogs, personal websites and API docs",
   "private": true,
   "main": "index.js",
-  "scripts": {
-    "copy": "node .knosys/scripts copy",
-    "build": "node .knosys/scripts build",
-    "clean": "rm -rf src/jekyll/.asset-cache",
-    "start": "node .knosys/scripts serve",
-    "predeploy": "npm run clean",
-    "deploy": "node .knosys/scripts deploy"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ourai/lime.git"
@@ -22,8 +14,18 @@
     "url": "https://github.com/ourai/lime/issues"
   },
   "homepage": "https://ourai.github.io/lime/",
+  "dependencies": {
+    "hexo-front-matter-defaults": "0.0.0"
+  },
   "devDependencies": {
-    "@ntks/toolbox": "0.0.6",
     "ksio": "0.0.2"
+  },
+  "scripts": {
+    "copy": "node .knosys/scripts copy",
+    "build": "node .knosys/scripts build",
+    "clean": "rm -rf src/jekyll/.asset-cache",
+    "start": "node .knosys/scripts serve",
+    "predeploy": "npm run clean",
+    "deploy": "node .knosys/scripts deploy"
   }
 }

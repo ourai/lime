@@ -52,14 +52,13 @@ function copyHexoFiles() {
 
   copyThemeAssets(`${hexoDistRoot}/source`, true);
 
-  const { devDependencies, ...pkgFields } = pick(require(`${prjRoot}/package.json`), ['version', 'description', 'repository', 'author', 'license', 'bugs', 'homepage', 'devDependencies']);
+  const pkgFields = pick(require(`${prjRoot}/package.json`), ['version', 'description', 'repository', 'author', 'license', 'bugs', 'homepage', 'dependencies']);
 
   saveData(`${hexoDistRoot}/package.json`, JSON.stringify({
     name: 'hexo-theme-lime',
     main: 'package.json',
     keywords: ['hexo', 'theme', 'lime', 'knosys', 'ksio'],
     ...pkgFields,
-    dependencies: { '@ntks/toolbox': devDependencies['@ntks/toolbox'] },
   }, null, 2));
   copyMetaFiles('hexo');
 }
