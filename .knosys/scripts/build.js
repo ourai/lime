@@ -52,7 +52,7 @@ function copyHexoFiles() {
 
   copyThemeAssets(`${hexoDistRoot}/source`, true);
 
-  const pkgFields = pick(require(`${prjRoot}/package.json`), ['version', 'description', 'repository', 'author', 'license', 'bugs', 'homepage', 'dependencies']);
+  const pkgFields = pick(require(`${prjRoot}/package.json`), ['version', 'description', 'repository', 'author', 'license', 'bugs', 'homepage', 'dependencies', 'peerDependencies']);
 
   saveData(`${hexoDistRoot}/package.json`, JSON.stringify({
     name: 'hexo-theme-lime',

@@ -1,6 +1,6 @@
 {
   "name": "@ourai/lime",
-  "version": "0.0.0-alpha.2",
+  "version": "0.0.0-alpha.3",
   "description": "Simple, readable, responsive theme for blogs, personal websites and API docs",
   "private": true,
   "main": "index.js",
@@ -14,8 +14,8 @@
     "url": "https://github.com/ourai/lime/issues"
   },
   "homepage": "https://ourai.github.io/lime/",
-  "dependencies": {
-    "hexo-front-matter-defaults": "0.0.0"
+  "peerDependencies": {
+    "hexo-front-matter-defaults": "~0.0.0"
   },
   "devDependencies": {
     "ksio": "0.0.2"
