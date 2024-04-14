@@ -4,6 +4,7 @@
     <%- partial('_ksio/partials/head') %>
     <%- css('stylesheets/global') %>
     <% [].concat(page.ksio_asset_css || []).forEach(cssPath => { %><%- css(cssPath) %><% }) %>
+    <%- partial('_ksio/partials/analytics') %>
     <%- js('javascripts/ksio/vendors/jquery-1.11.3.min') %>
     <%- js('javascripts/ksio/vendors/bootstrap.min') %>
   </head>
