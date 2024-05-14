@@ -18,6 +18,8 @@
     "hexo-front-matter-defaults": "~0.0.0"
   },
   "devDependencies": {
+    "@knosys/sdk": "^0.0.3",
+    "@ntks/toolbox": "^0.0.6",
     "ksio": "0.0.2"
   },
   "scripts": {
