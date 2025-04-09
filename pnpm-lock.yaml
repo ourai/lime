@@ -3,25 +3,14 @@ lockfileVersion: 5.4
 specifiers:
   '@knosys/sdk': ^0.0.3
   '@ntks/toolbox': ^0.0.6
-  ksio: 0.0.2
+  ksio: 0.0.3
 
 devDependencies:
   '@knosys/sdk': 0.0.3
   '@ntks/toolbox': 0.0.6
-  ksio: 0.0.2
+  ksio: 0.0.3
 
 packages:
-
-  /@knosys/sdk/0.0.2:
-    resolution: {integrity: sha512-FygtVYuRK7Y30pK6T1NmNA+qZj9f4K05iyqAhFKJHzTNHvOudKalCCMc+QX+Ir2KSlYATMe/5H6gjDgtYujf2g==}
-    engines: {node: '>=14.0.0'}
-    dependencies:
-      '@ntks/toolbox': 0.0.6
-      gray-matter: 4.0.3
-      js-yaml: 3.14.1
-      markdown-it: 14.1.0
-      shelljs: 0.8.5
-    dev: true
 
   /@knosys/sdk/0.0.3:
     resolution: {integrity: sha512-RxhmP2QLfRKC4eKq2MKacBeC4BooBgd36jrYsHWLgeaKL4HqyHpbRK6/uzUcsT7LC3aBDwB1LqyLp4dBsv7TZA==}
@@ -157,12 +146,12 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /ksio/0.0.2:
-    resolution: {integrity: sha512-n5CIt/AvNikZCBacERdPI766TILvGkvgw3Lab34jWnUdL7rxc4fCqeo9UFQjZn+rnFu63Ls7icXIEDOtsxqLZA==}
+  /ksio/0.0.3:
+    resolution: {integrity: sha512-D2CqmsI2bGFT70Z+uhQO+I9xBF9yW49bZfJ8uURY9pRyV4RYTuiV4rNTqg+2CRou/2HREVleKw4UcAzN2QJI+Q==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
-      '@knosys/sdk': 0.0.2
+      '@knosys/sdk': 0.0.3
     dev: true
 
   /linkify-it/5.0.0:

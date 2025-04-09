@@ -88,7 +88,7 @@ interface CopyrightPeriod {
 | 属性名 | 值类型/可选值 | 默认值 | 说明 |
 | --- | --- | --- | --- |
 | `navbar` | `HeaderNavBar` | - | 页头导航栏，[详见下方](#navbar) |
-| `navs` | `Link[]` | - | 页面头部导航 |
+| `navs` | `Link[]` | - | 页面头部导航，最多 3 层 |
 | `partial` | `string` | `'ksio/partials/header.html'` | 预置布局模板中页头部分，可指定自定义的替换主题预置的 |
 
 #### `navbar`

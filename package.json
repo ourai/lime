@@ -1,6 +1,6 @@
 {
   "name": "@ourai/lime",
-  "version": "0.0.0-alpha.3",
+  "version": "0.0.0-alpha.4",
   "description": "Simple, readable, responsive theme for blogs, personal websites and API docs",
   "private": true,
   "main": "index.js",
@@ -20,7 +20,7 @@
   "devDependencies": {
     "@knosys/sdk": "^0.0.3",
     "@ntks/toolbox": "^0.0.6",
-    "ksio": "0.0.2"
+    "ksio": "0.0.3"
   },
   "scripts": {
     "copy": "node .knosys/scripts copy",

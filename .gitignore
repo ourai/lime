@@ -30,3 +30,4 @@ src/hexo/db.json
 src/hexo/public/
 src/hexo/.deploy*/
 src/hexo/_multiconfig.yml
+src/hexo/pnpm-lock.yaml
