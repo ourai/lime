@@ -1,7 +1,7 @@
 <% const ksio_seo = theme.seo || {} %>
 <% const ksio_meta = theme.meta || {} %>
 <% const ksio_master = theme.master || {} %>
-<% const seo_url = config.url %>
+<% const seo_url = config.url || ksio_meta.url %>
 <% let seo_site_title = config.title %>
 <% const seo_title_suffix = ` - ${seo_site_title}` %>
 <% let seo_title %>
@@ -61,16 +61,24 @@
   <% seo_author_name = page.author ? (page.author.name || page.author) : master_name %>
   <% seo_author_twitter = page.author ? (page.author.twitter || page.author) : '' %>
 <% } %>
+
 <% if (seo_title) { %>
   <title><%= seo_title %></title>
 <% } %>
+
+<meta name="twitter:card" content="summary_large_image">
+
 <% if (seo_page_title) { %>
   <meta property="og:title" content="<%= seo_page_title %>">
+  <meta name="twitter:title" content="<%= seo_page_title %>">
 <% } %>
+
 <% if (seo_description) { %>
   <meta name="description" content="<%= seo_description %>">
   <meta property="og:description" content="<%= seo_description %>">
+  <meta name="twitter:description" content="<%= seo_description %>">
 <% } %>
+
 <% let keywords %>
 <% if (page.keywords) { %>
   <% keywords = page.keywords %>
@@ -81,4 +89,49 @@
 <% } %>
 <% if (keywords) { %>
   <meta name="keywords" content="<%= keywords %>">
+<% } %>
+
+<% if (seo_url) { %>
+  <% let pageUrl = page.path.replace('.html', '').replace('index.html', '') %>
+  <% if (pageUrl.startsWith('/')) { %>
+    <% pageUrl = pageUrl.slice(1) %>
+  <% } %>
+  <% pageUrl = `${seo_url}/${pageUrl}` %>
+  <link rel="canonical" href="<%= pageUrl %>">
+  <meta property="og:url" content="<%= pageUrl %>">
+<% } %>
+
+<% if (seo_site_title) { %>
+  <meta property="og:site_name" content="<%= seo_site_title %>">
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "WebSite",
+      "name" : <%- JSON.stringify(seo_site_title) %>,
+      "url" : <%- JSON.stringify(seo_url) %>
+    }
+  </script>
+<% } %>
+
+<% let seo_page_image %>
+<% if (page.image) { %>
+  <% seo_page_image = page.image %>
+<% } else if (page.banner) { %>
+  <% seo_page_image = page.banner.url || page.banner %>
+<% } %>
+<% if (seo_page_image) { %>
+  <% seo_page_image = url_for(seo_page_image) %>
+<% } %>
+
+<% if (seo_page_image) { %>
+  <% let pageImage = seo_page_image %>
+  <% if (config.root && config.root !== '/') { %>
+    <% pageImage = pageImage.replace(config.root, '') %>
+  <% } %>
+  <% if (pageImage.startsWith('/')) { %>
+    <% pageImage = pageImage.slice(1) %>
+  <% } %>
+  <% pageImage = `${seo_url}/${pageImage}` %>
+  <meta property="og:image" content="<%= pageImage %>">
+  <meta name="twitter:image" content="<%= pageImage %>">
 <% } %>
