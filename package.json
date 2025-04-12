@@ -1,33 +1,23 @@
 {
-  "name": "@ourai/lime",
-  "version": "0.0.0-alpha.5",
+  "name": "@lime-theme/lime",
+  "version": "0.0.0",
   "description": "Simple, readable, responsive theme for blogs, personal websites and API docs",
   "private": true,
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ourai/lime.git"
+    "url": "git+https://github.com/lime-theme/lime.git"
   },
   "author": "Ourai L. <ourairyu@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ourai/lime/issues"
+    "url": "https://github.com/lime-theme/lime/issues"
   },
-  "homepage": "https://ourai.github.io/lime/",
-  "peerDependencies": {
-    "hexo-front-matter-defaults": "~0.0.0"
-  },
+  "homepage": "https://lime-theme.github.io",
   "devDependencies": {
     "@knosys/sdk": "^0.0.3",
     "@ntks/toolbox": "^0.0.6",
     "ksio": "0.0.3"
   },
-  "scripts": {
-    "copy": "node .knosys/scripts copy",
-    "build": "node .knosys/scripts build",
-    "clean": "rm -rf src/jekyll/.asset-cache",
-    "start": "node .knosys/scripts serve",
-    "predeploy": "npm run clean",
-    "deploy": "node .knosys/scripts deploy"
-  }
+  "scripts": {}
 }

@@ -1,7 +1,0 @@
-{% if page.ksio_slot_aside %}
-  <div class="Page-sidebar col-md-3">{% include {{ page.ksio_slot_aside | replace: ".html", "" | append: ".html" }} %}</div>
-{% else %}
-  {% ifhascontent sidebar %}
-    <div class="Page-sidebar col-md-3">{% contentblock sidebar %}</div>
-  {% endifhascontent %}
-{% endif %}

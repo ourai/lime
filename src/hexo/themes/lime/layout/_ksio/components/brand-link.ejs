@@ -1,7 +1,0 @@
-<% let _inc_brand_url = config.root || '/' %>
-<% let _inc_brand_text = (theme.brand && theme.brand.text) || config.title %>
-<% if (theme.brand && theme.brand.parent) { %>
-  <a href="<%= theme.brand.parent.url %>?utm_source=<%= theme.meta.url %>&utm_medium=brand" target="_blank" rel="external nofollow"><%= theme.brand.parent.text %></a><a href="<%= _inc_brand_url %>"><%= _inc_brand_text %></a>
-<% } else { %>
-  <a <% if (className) { %>class="<%= className %>" <% } %>href="<%= _inc_brand_url %>"><%= _inc_brand_text %></a>
-<% } %>

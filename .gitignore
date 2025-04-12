@@ -1,33 +1,13 @@
-# macOS
 .DS_Store
-*.nosync
-
 sh.exe.stackdump
 
 *.log
 
-# npm
+node_modules/
 package-lock.json
-node_modules
+pnpm-lock.yaml
+yarn.lock
 
-dist/
+.env.local
 
-.cache/
-.asset-cache/
-.sass-cache/
-
-src/jekyll/_data/knosys/
-src/jekyll/_knosys/
-src/jekyll/_assets/*/ksio/
-src/jekyll/_site/
-
-src/hexo/source/_data/knosys/
-src/hexo/source/knosys/
-src/hexo/source/_posts/
-src/hexo/themes/lime/source/*/ksio/
-src/hexo/Thumbs.db
-src/hexo/db.json
-src/hexo/public/
-src/hexo/.deploy*/
-src/hexo/_multiconfig.yml
-src/hexo/pnpm-lock.yaml
+/dist/

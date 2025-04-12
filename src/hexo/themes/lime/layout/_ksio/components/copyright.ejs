@@ -1,4 +1,0 @@
-<% let _inc_cr = theme.copyright %><% let _inc_external = false %><% if (_inc_cr) { %><% let _inc_current = date(new Date(), 'YYYY') %><% let _inc_start = (_inc_cr.period && _inc_cr.period.start) || _inc_current %><% let _inc_site_url = config.root || '/' %><% let _inc_url = (_inc_cr.owner && _inc_cr.owner.url) || _inc_site_url %><% if (_inc_url.indexOf('http') === 0) { %>
-<% _inc_external = true %><% if (utm) { %><% _inc_url = `${_inc_url}?${utm}` %><% } %>
-<% } %>&copy; <% if (_inc_start != _inc_current) { %><%= _inc_start %>-<% } %><%= _inc_current %> <a href="<%= _inc_url %>"<% if (_inc_external) { %> target="_blank" rel="external nofollow"<% } %>><%= _inc_cr.owner.text || config.title %></a> 版权所有
-<% } %>
