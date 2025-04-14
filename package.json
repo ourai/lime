@@ -1,9 +1,10 @@
 {
   "name": "@lime-theme/lime",
-  "version": "0.0.0",
+  "version": "0.0.0-alpha.1",
   "description": "Simple, readable, responsive theme for blogs, personal websites and API docs",
-  "private": true,
+  "keywords": ["lime", "theme", "knosys", "ksio", "blog", "website", "documentation"],
   "main": "index.js",
+  "files": ["src", "dist"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lime-theme/lime.git"
